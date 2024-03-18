@@ -2,5 +2,4 @@
 
 #ignore cmakelists files
 **/CMakeLists.txt
-main.cpp
-
+mainblur
