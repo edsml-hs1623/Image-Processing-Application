@@ -1,44 +1,62 @@
-#include <iostream>
 #include "Image.h"
+#include "ImageBlur.h"
+#include <iostream>
+#include <filesystem>
+#include <string>
 
+namespace fs = std::__fs::filesystem; // Using the filesystem namespace for directory operations
 
 int main() {
-    Image img;
+    Image image;
+    // Fixed input path
+    std::string inputFileName = "/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/Images/vh_anatomy.png";
 
-    // Load an image
-    std::string inputFilename = "../Images/gracehopper.png";
-    if (!img.loadImage(inputFilename)) {
-        std::cerr << "Failed to load image: " << inputFilename << std::endl;
+    if (!image.loadImage(inputFileName)) {
+        std::cerr << "Failed to load image: " << inputFileName << std::endl;
         return 1;
     }
-    std::cout << "Loaded image: " << inputFilename << std::endl;
-    std::cout << "Image dimensions: " << img.getWidth() << "x" << img.getHeight() << " - Channels: " << img.getChannels() << std::endl;
 
-    // Example manipulation: Invert colors
-    // Note: This is a simplistic example. For actual filter implementations, modify accordingly.
-    unsigned char* data = img.getData();
-    int width = img.getWidth();
-    int height = img.getHeight();
-    int channels = img.getChannels();
+    int kernelSize = 5; // Fixed kernel size for simplicity
+    int choice;
+    std::cout << "Choose blur method:\n1. Box Blur\n2. Median Blur\n3. Gaussian Blur\nEnter choice (1-3): ";
+    std::cin >> choice;
 
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
-            int index = (y * width + x) * channels;
-            for (int c = 0; c < channels; ++c) { // Invert each channel except alpha
-                if (c < 3) { // Assuming the alpha channel is the last one if exists
-                    data[index + c] = 255 - data[index + c];
-                }
-            }
-        }
+    // Determine the project directory by using the input file's directory and navigating up to the project root
+    fs::path projectDir = fs::path(inputFileName).parent_path().parent_path(); // Go up twice from Images to project root
+    fs::path outputDir = projectDir / "results"; // Construct the path to the results directory
+    fs::create_directory(outputDir); // Ensure the "results" directory exists
+
+    ImageBlur *blur;
+    std::string blurTypeStr;
+    switch(choice) {
+        case 1:
+            blur = new ImageBlur(Box, kernelSize);
+            blurTypeStr = "Box";
+            break;
+        case 2:
+            blur = new ImageBlur(Median, kernelSize);
+            blurTypeStr = "Median";
+            break;
+        case 3:
+            blur = new ImageBlur(Gaussian, kernelSize);
+            blurTypeStr = "Gaussian";
+            break;
+        default:
+            std::cerr << "Invalid choice." << std::endl;
+            return 1;
     }
 
-    // Save the manipulated image
-    std::string outputFilename = "../Images/gracehopper_test.png";
-    if (!img.saveImage(outputFilename, "png")) {
-        std::cerr << "Failed to save image: " << outputFilename << std::endl;
+    blur->apply(image);
+    delete blur; // Remember to delete the dynamically allocated blur object
+
+    // Construct the output file name
+    std::string baseFileName = fs::path(inputFileName).stem().string(); // Extract base name without extension
+    std::string outputFileName = (outputDir / (baseFileName + "_" + blurTypeStr + ".png")).string();
+    if (!image.saveImage(outputFileName, "png")) {
+        std::cerr << "Failed to save image: " << outputFileName << std::endl;
         return 1;
     }
-    std::cout << "Saved manipulated image to: " << outputFilename << std::endl;
 
+    std::cout << "Processed image saved to " << outputFileName << std::endl;
     return 0;
 }
