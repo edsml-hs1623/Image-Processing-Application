@@ -7,8 +7,31 @@
 namespace fs = std::__fs::filesystem; // Using the filesystem namespace for directory operations
 
 int main() {
+
+    std::vector<std::string> images = {
+            "dimorphos.png",
+            "gracehopper.png",
+            "stinkbug.png",
+            "tienshan.png",
+            "vh_anatomy.png",
+            "vh_anatomy_sp15.png",
+            "vh_ct.png" // Assuming this is an additional image
+    };
+
+    // Present the list of images
+    std::cout << "Select an image to process:\n";
+    for (size_t i = 0; i < images.size(); ++i) {
+        std::cout << (i + 1) << ". " << images[i] << '\n';
+    }
+
+    // Get the user's choice
+    int imageChoice;
+    do {
+        std::cout << "Enter a number (1-" << images.size() << "): ";
+        std::cin >> imageChoice;
+    } while(imageChoice < 1 || imageChoice > images.size());
+
     Image image;
-    // Fixed input path
     std::string inputFileName = "/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/Images/vh_anatomy.png";
 
     if (!image.loadImage(inputFileName)) {
@@ -16,29 +39,28 @@ int main() {
         return 1;
     }
 
-    int kernelSize = 13; // Fixed kernel size for simplicity
     int choice;
     std::cout << "Choose blur method:\n1. Box Blur\n2. Median Blur\n3. Gaussian Blur\nEnter choice (1-3): ";
     std::cin >> choice;
 
-    // Determine the project directory by using the input file's directory and navigating up to the project root
-    fs::path projectDir = fs::path(inputFileName).parent_path().parent_path(); // Go up twice from Images to project root
-    fs::path outputDir = projectDir / "results"; // Construct the path to the results directory
-    fs::create_directory(outputDir); // Ensure the "results" directory exists
+    int kernelSize;
+    std::cout << "Enter kernel size (e.g., 3 for 3x3): ";
+    std::cin >> kernelSize;
 
-    ImageBlur *blur;
+    fs::path projectDir = fs::path(inputFileName).parent_path().parent_path();
+    fs::path blurTypeDir; // Directory path for the specific blur type
     std::string blurTypeStr;
     switch(choice) {
         case 1:
-            blur = new ImageBlur(Box, kernelSize);
+            blurTypeDir = projectDir / "6-blur" / "box";
             blurTypeStr = "Box";
             break;
         case 2:
-            blur = new ImageBlur(Median, kernelSize);
+            blurTypeDir = projectDir / "6-blur" / "median";
             blurTypeStr = "Median";
             break;
         case 3:
-            blur = new ImageBlur(Gaussian, kernelSize);
+            blurTypeDir = projectDir / "6-blur" / "gaussian";
             blurTypeStr = "Gaussian";
             break;
         default:
@@ -46,12 +68,18 @@ int main() {
             return 1;
     }
 
-    blur->apply(image);
-    delete blur; // Remember to delete the dynamically allocated blur object
+    // Ensure the directory exists
+    if (!fs::exists(blurTypeDir)) {
+        fs::create_directories(blurTypeDir);
+    }
 
-    // Construct the output file name
-    std::string baseFileName = fs::path(inputFileName).stem().string(); // Extract base name without extension
-    std::string outputFileName = (outputDir / (baseFileName + "_" + blurTypeStr + ".png")).string();
+    ImageBlur *blur = new ImageBlur(static_cast<BlurType>(choice), kernelSize);
+    blur->apply(image);
+    delete blur;
+
+    std::string baseFileName = fs::path(inputFileName).stem().string();
+    std::string kernelSizeStr = std::to_string(kernelSize) + "x" + std::to_string(kernelSize);
+    std::string outputFileName = (blurTypeDir / (baseFileName + "_" + kernelSizeStr + ".png")).string();
     if (!image.saveImage(outputFileName, "png")) {
         std::cerr << "Failed to save image: " << outputFileName << std::endl;
         return 1;
