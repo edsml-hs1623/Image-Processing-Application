@@ -1,8 +1,32 @@
-//
-// Created by Taylor, Saffron on 18/03/2024.
-//
+#ifndef IMAGEBLUR_H
+#define IMAGEBLUR_H
 
-#ifndef SRC_IMAGEBLUR_H
-#define SRC_IMAGEBLUR_H
+#include "Filter.h"
+#include "Image.h"
+#include "ImageBlur.h"
+#include <iostream>
+#include <string>
 
-#endif //SRC_IMAGEBLUR_H
+
+enum BlurType { Median, Box, Gaussian };
+
+class ImageBlur : public Filter {
+public:
+    ImageBlur(BlurType type, int kernelSize);
+
+    virtual ~ImageBlur();
+
+    void apply(Image &image) override;
+
+private:
+    BlurType blurType;
+    int kernelSize;
+
+    void applyBoxBlur(Image &image);
+    void applyMedianBlur(Image &image);
+    void applyGaussianBlur(Image &image);
+
+    // Define other blur methods as needed
+};
+
+#endif // IMAGEBLUR_H
