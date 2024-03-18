@@ -18,7 +18,7 @@ int main() {
     unsigned char* data;
 
     // Read in image file
-    data = stbi_load("example.png", &w, &h, &c, 0);
+    data = stbi_load("../Images/gracehopper.png", &w, &h, &c, 0);
 
     // Print image size to screen
     std::cout << "Image loaded with size " << w << " x " << h << " with " << c << " channel(s)." << std::endl; 
