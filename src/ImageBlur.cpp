@@ -1,5 +1,4 @@
 #include "ImageBlur.h"
-#include <algorithm>
 #include <cmath>
 #include <numeric>
 #include <vector>
@@ -56,6 +55,32 @@ void ImageBlur::applyBoxBlur(Image &image) {
 
     std::copy(newData.begin(), newData.end(), data);
 }
+
+unsigned char ImageBlur::findMedian(std::vector<unsigned char>& values) {
+    selectionSort(values);
+    if (values.size() % 2 == 0) {
+        return (values[values.size() / 2 - 1] + values[values.size() / 2]) / 2;
+    } else {
+        return values[values.size() / 2];
+    }
+}
+
+void ImageBlur::selectionSort(std::vector<unsigned char>& arr) {
+    for (size_t i = 0; i < arr.size() - 1; i++) {
+        size_t min_idx = i;
+        for (size_t j = i + 1; j < arr.size(); j++) {
+            if (arr[j] < arr[min_idx]) {
+                min_idx = j;
+            }
+        }
+        // Swap the found minimum element with the first element
+        unsigned char temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+
 
 void ImageBlur::applyMedianBlur(Image &image) {
     int width = image.getWidth();

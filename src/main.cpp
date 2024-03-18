@@ -34,7 +34,7 @@ int main() {
     std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
 
     // Construct the full path to the image
-    fs::path imagePath = fs::path("/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/Images") / chosenImageFileName;
+    fs::path imagePath = fs::path("/Users/yifeidou/advanced-programming-group-selection-sort/Images") / chosenImageFileName;
 
     Image image;
     if (!image.loadImage(imagePath.string())) {

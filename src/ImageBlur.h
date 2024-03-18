@@ -6,6 +6,7 @@
 #include "ImageBlur.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 
 enum BlurType { Median, Box, Gaussian };
@@ -25,6 +26,8 @@ private:
     void applyBoxBlur(Image &image);
     void applyMedianBlur(Image &image);
     void applyGaussianBlur(Image &image);
+    unsigned char findMedian(std::vector<unsigned char>& values);
+    void selectionSort(std::vector<unsigned char>& arr);
 
     // Define other blur methods as needed
 };
