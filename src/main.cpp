@@ -16,7 +16,7 @@ int main() {
         return 1;
     }
 
-    int kernelSize = 5; // Fixed kernel size for simplicity
+    int kernelSize = 13; // Fixed kernel size for simplicity
     int choice;
     std::cout << "Choose blur method:\n1. Box Blur\n2. Median Blur\n3. Gaussian Blur\nEnter choice (1-3): ";
     std::cin >> choice;
