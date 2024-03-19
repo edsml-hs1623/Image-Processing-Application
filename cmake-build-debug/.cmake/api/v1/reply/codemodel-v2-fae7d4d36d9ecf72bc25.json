@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,8 +43,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-a9ef9cbcd93c8d0e11e6.json",
+					"jsonFile" : "target-main-Debug-e2b8ca62a2097c6f7c36.json",
 					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main3d-Debug-27d9b473fddca918e8b7.json",
+					"name" : "main3d",
 					"projectIndex" : 0
 				},
 				{

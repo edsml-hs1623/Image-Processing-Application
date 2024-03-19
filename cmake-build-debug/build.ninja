@@ -102,6 +102,13 @@ build CMakeFiles/main.dir/src/ImageBlur.cpp.o: CXX_COMPILER__main_unscanned_Debu
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir/src
 
+build CMakeFiles/main.dir/src/Volume.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Volume.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/Volume.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target main
@@ -110,13 +117,66 @@ build CMakeFiles/main.dir/src/ImageBlur.cpp.o: CXX_COMPILER__main_unscanned_Debu
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/Image.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/ImageBlur.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/Image.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/ImageBlur.cpp.o CMakeFiles/main.dir/src/Volume.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = main
   TARGET_PDB = main.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main3d
+
+
+#############################################
+# Order-only phony target for main3d
+
+build cmake_object_order_depends_target_main3d: phony || CMakeFiles/main3d.dir
+
+build CMakeFiles/main3d.dir/src/Image.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Image.cpp || cmake_object_order_depends_target_main3d
+  DEP_FILE = CMakeFiles/main3d.dir/src/Image.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+
+build CMakeFiles/main3d.dir/src/main3d.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/main3d.cpp || cmake_object_order_depends_target_main3d
+  DEP_FILE = CMakeFiles/main3d.dir/src/main3d.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+
+build CMakeFiles/main3d.dir/src/ImageBlur.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/ImageBlur.cpp || cmake_object_order_depends_target_main3d
+  DEP_FILE = CMakeFiles/main3d.dir/src/ImageBlur.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+
+build CMakeFiles/main3d.dir/src/Volume.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Volume.cpp || cmake_object_order_depends_target_main3d
+  DEP_FILE = CMakeFiles/main3d.dir/src/Volume.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main3d
+
+
+#############################################
+# Link the executable main3d
+
+build main3d: CXX_EXECUTABLE_LINKER__main3d_Debug CMakeFiles/main3d.dir/src/Image.cpp.o CMakeFiles/main3d.dir/src/main3d.cpp.o CMakeFiles/main3d.dir/src/ImageBlur.cpp.o CMakeFiles/main3d.dir/src/Volume.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = main3d
+  TARGET_PDB = main3d.dbg
 
 
 #############################################
@@ -152,7 +212,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug
 
-build all: phony src main
+build all: phony src main main3d
 
 # =============================================================================
 # Built-in targets
