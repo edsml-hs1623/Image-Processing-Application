@@ -15,6 +15,10 @@ Volume::~Volume() {
     freeVolume();
 }
 
+const std::vector<std::vector<unsigned char>>& Volume::getData() const {
+    return data;
+}
+
 void Volume::freeVolume() {
     data.clear();
     width = 0;
@@ -53,13 +57,6 @@ bool Volume::loadVolume(const std::string& directoryPath) {
     return true;
 }
 
-std::vector<unsigned char> Volume::getSliceData(int sliceIndex) const {
-    if (sliceIndex < 0 || sliceIndex >= depth) {
-        std::cerr << "Slice index out of bounds." << std::endl;
-        return std::vector<unsigned char>(); // Return an empty vector to indicate error
-    }
-    return data[sliceIndex];
-}
 
 int Volume::getWidth() const {
     return width;
@@ -73,20 +70,6 @@ int Volume::getDepth() const {
     return depth;
 }
 
-bool Volume::saveSlice(const std::string& filename, int sliceIndex, const std::string& format) {
-    if (sliceIndex < 0 || sliceIndex >= depth) {
-        std::cerr << "Slice index out of range." << std::endl;
-        return false;
-    }
-    const auto& sliceData = getSliceData(sliceIndex);
-    int success = 0;
-    if (format == "png") {
-        success = stbi_write_png(filename.c_str(), width, height, channels, sliceData.data(), width * channels);
-    } else if (format == "bmp") {
-        success = stbi_write_bmp(filename.c_str(), width, height, channels, sliceData.data());
-    } else {
-        std::cerr << "Unsupported format. Only 'png' and 'bmp' are supported." << std::endl;
-        return false;
-    }
-    return success != 0;
+int Volume::getChannels() const {
+    return channels;
 }
