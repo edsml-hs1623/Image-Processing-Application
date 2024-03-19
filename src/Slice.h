@@ -1,8 +1,14 @@
-//
-// Created by Taylor, Saffron on 19/03/2024.
-//
+// Slice.h
+#ifndef SLICE_H
+#define SLICE_H
 
-#ifndef SRC_SLICE_H
-#define SRC_SLICE_H
+#include "Volume.h"
+#include <string>
 
-#endif //SRC_SLICE_H
+class Slice {
+public:
+    static void sliceXZ(const Volume& volume, int y, const std::string& outputPath);
+    static void sliceYZ(const Volume& volume, int x, const std::string& outputPath);
+};
+
+#endif // SLICE_H
