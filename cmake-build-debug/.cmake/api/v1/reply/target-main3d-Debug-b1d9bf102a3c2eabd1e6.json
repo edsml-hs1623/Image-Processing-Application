@@ -66,7 +66,10 @@
 				0,
 				1,
 				4,
-				5
+				5,
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -102,7 +105,10 @@
 				0,
 				1,
 				4,
-				5
+				5,
+				6,
+				7,
+				8
 			]
 		},
 		{
@@ -148,6 +154,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Volume.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Slice.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Projection.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/VolumeFilter.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

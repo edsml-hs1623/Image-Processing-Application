@@ -4,8 +4,7 @@
 #include <filesystem>
 #include <string>
 
-namespace fs = std::__fs::filesystem; // Using the filesystem namespace for directory operations
-
+namespace fs = std::__fs::filesystem;
 int main() {
     std::vector<std::string> images = {
             "dimorphos.png",
