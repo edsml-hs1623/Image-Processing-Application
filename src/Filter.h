@@ -23,10 +23,6 @@
  *
  * @note The Image class should be included and properly defined for this interface to work.
  *       Derived filter classes must implement the apply method for specific filtering operations.
- *
- * @author [Your Name or Your Organization]
- * @version [Version Number]
- * @date [Date of Last Update]
  */
 
 #ifndef FILTER_H

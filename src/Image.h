@@ -15,10 +15,6 @@
  *   - Manipulate raw image data for advanced image processing tasks.
  *
  * @note This class assumes the presence of stb_image.h and stb_image_write.h in the project for handling image I/O.
- *
- * @author [Your Name or Your Organization]
- * @version [Version Number]
- * @date [Date of Last Update]
  */
 
 #ifndef IMAGE_H // Start of the include guard
