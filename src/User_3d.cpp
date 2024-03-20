@@ -1,4 +1,3 @@
-#pragma once
 #include "Volume.h"
 #include "Projection.h"
 #include "ThreeDFilter.h"

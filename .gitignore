@@ -21,3 +21,9 @@ mainblur
 #ignore 6-blur
 **/6-blur
 
+**/.vscode/
+**/main
+
+#output
+
+**/Output

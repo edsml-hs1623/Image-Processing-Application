@@ -39,9 +39,6 @@
 #include <iostream>
 #include <string>
 
-// Using the filesystem namespace for directory operations
-namespace fs = std::filesystem;
-
 /**
  * Presents a list of images to the user and gets their choice.
  *
@@ -306,7 +303,7 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
     switch (filter) {
     case 1:
         ColourCorrectionTypeDir = projectDir / "grayscale";
-        ColourCorrectionTypeStr;
+        ColourCorrectionTypeStr = "";
 
         break;
     case 2:
