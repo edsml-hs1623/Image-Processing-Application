@@ -2,17 +2,47 @@
 #include "Projection.h"
 #include "ThreeDFilter.h"
 #include "Slice.h"
-
 #include "User_3D.h"
 
-User_3D::User_3D(const std::string& baseDir, const std::string& datasetName) {
-    std::string datasetDir = baseDir + "/" + datasetName;
+#include <iostream>
+#include <filesystem>
+
+namespace fs = std::filesystem;
+
+User_3D::User_3D() {
+    selectDataset();
+
+    std::string datasetDir = std::string(baseDir) + "/" + datasetName;
     if (!originalVolume.loadVolume(datasetDir)) {
         std::cerr << "Failed to load volume for dataset: " << datasetName << std::endl;
         exit(-1);
     }
-    outputDir = "../8-3D/" + datasetName; // Adjust the path as needed
+
+    outputDir = "/Users/yifeidou/advanced-programming-group-selection-sort/Output/3D/" + datasetName; // Adjust the path as needed
 }
+
+void User_3D::selectDataset() {
+    std::cout << "Select the dataset you want to process:\n";
+    std::cout << "1. Fracture\n";
+    std::cout << "2. Confuciusornis\n";
+    std::cout << "Enter your choice (1 or 2): ";
+
+    int choice;
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1:
+            datasetName = "fracture";
+            break;
+        case 2:
+            datasetName = "confuciusornis";
+            break;
+        default:
+            std::cerr << "Invalid choice. Exiting program.\n";
+            exit(-1);
+    }
+}
+
 
 void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, std::string& filterType) {
     std::cout << "Volume dimensions: " << originalVolume.getWidth() << " (W) x "
@@ -54,30 +84,18 @@ void User_3D::generateProjections(const Volume& processedVolume, const std::stri
 
 void User_3D::handleSliceGeneration(const Volume& processedVolume) {
     int sliceIndex;
-    while (true) { // Start an infinite loop that will break once a valid input is received
-        std::cout << "Enter slice index (0 to skip, range: 1 to " << originalVolume.getDepth() << "): ";
-        std::cin >> sliceIndex;
+    std::cout << "Enter slice index (0 to skip, range: 1 to " << originalVolume.getDepth() << "): ";
+    std::cin >> sliceIndex;
+    if (sliceIndex > 0) {
+        std::string sliceXZPath = outputDir + "/sliceXZ_" + std::to_string(sliceIndex) + ".png";
+        std::string sliceYZPath = outputDir + "/sliceYZ_" + std::to_string(sliceIndex) + ".png";
+        Slice::sliceXZ(processedVolume, sliceIndex - 1, sliceXZPath);
+        Slice::sliceYZ(processedVolume, sliceIndex - 1, sliceYZPath);
 
-        // Check if the input is within the valid range or if the user chose to skip
-        if (sliceIndex == 0) {
-            std::cout << "Skipping slice generation.\n";
-            break; // Exit the loop if the user chooses to skip
-        } else if (sliceIndex > 0 && sliceIndex <= originalVolume.getDepth()) {
-            std::string sliceXZPath = outputDir + "/sliceXZ_" + std::to_string(sliceIndex) + ".png";
-            std::string sliceYZPath = outputDir + "/sliceYZ_" + std::to_string(sliceIndex) + ".png";
-            Slice::sliceXZ(processedVolume, sliceIndex - 1, sliceXZPath); // Adjust index for 0-based indexing
-            Slice::sliceYZ(processedVolume, sliceIndex - 1, sliceYZPath);
-
-            std::cout << "Slice XZ generated and saved: " << sliceXZPath << "\n";
-            std::cout << "Slice YZ generated and saved: " << sliceYZPath << "\n";
-            break; // Exit the loop after successfully processing the input
-        } else {
-            // Inform the user of the valid range and prompt again
-            std::cerr << "Invalid slice index. Please ensure it is within the range: 1 to " << originalVolume.getDepth() << ".\n";
-        }
+        std::cout << "Slice XZ generated and saved: " << sliceXZPath << "\n";
+        std::cout << "Slice YZ generated and saved: " << sliceYZPath << "\n";
     }
 }
-
 
 void User_3D::handleSlabGeneration(const Volume& processedVolume) {
     int slabStartIndex, slabWidth;
@@ -114,7 +132,3 @@ void User_3D::run() {
     handleSliceGeneration(processedVolume);
     handleSlabGeneration(processedVolume);
 }
-
-
-
-

@@ -27,7 +27,7 @@
 #include "ImageBlur.h"
 #include "ColourCorrection.h"
 #include "User_2D.h"
-// #include "User_3D.h"
+#include "User_3D.h"
 
 #include <iostream>
 #include <filesystem>
@@ -35,6 +35,24 @@
 
 
 int main() {
-    User_2D();
+    int choice;
+    std::cout << "Please select the mode you would like to use:" << std::endl;
+    std::cout << "1. 2D Processing" << std::endl;
+    std::cout << "2. 3D Processing" << std::endl;
+    std::cout << "Enter choice (1 or 2): ";
+    std::cin >> choice;
+
+    // Based on the user's choice, create the appropriate user object
+    // and call the run method to start the interaction.
+    if (choice == 1) {
+        User_2D();
+    } else if (choice == 2) {
+        User_3D user3D;
+        user3D.run();   
+    } else {
+        std::cout << "Invalid choice. Exiting program." << std::endl;
+        return 1;
+    }
+
     return 0;
 }
