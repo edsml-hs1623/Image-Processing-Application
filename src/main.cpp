@@ -27,6 +27,7 @@
 #include "ImageBlur.h"
 #include "ColourCorrection.h"
 #include "User_2D.h"
+#include "User_3d.h"
 
 #include <iostream>
 #include <filesystem>

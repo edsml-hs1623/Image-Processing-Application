@@ -1,1 +1,23 @@
 .DS_Store
+
+#ignore cmakelists files
+**/CMakeLists.txt
+mainblur
+
+#ignoreScans
+**/Scans
+
+#ignore build directory
+**/build
+
+#ignore cmake files
+**/CMakeFiles
+**/cmake_install.cmake
+**/CMakeCache.txt
+**/Makefile
+#ignore cmakedebug
+**/cmake_debug
+
+#ignore 6-blur
+**/6-blur
+

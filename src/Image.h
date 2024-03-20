@@ -45,3 +45,4 @@ private:
 
 
 #endif // IMAGE_H
+

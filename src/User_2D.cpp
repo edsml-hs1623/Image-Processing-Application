@@ -40,13 +40,7 @@
 #include <string>
 
 // Using the filesystem namespace for directory operations
-#ifdef _MSC_VER
-// For Visual Studio
 namespace fs = std::filesystem;
-#else
-// For other compilers
-namespace fs = std::__fs::filesystem;
-#endif
 
 /**
  * Presents a list of images to the user and gets their choice.

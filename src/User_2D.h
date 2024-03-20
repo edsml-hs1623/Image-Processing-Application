@@ -38,6 +38,7 @@
 #include "ImageBlur.h"
 #include "ColourCorrection.h"
 
+// Using the filesystem namespace for directory operations
 namespace fs = std::filesystem;
 
 int selectImage(const std::vector<std::string>& images);
