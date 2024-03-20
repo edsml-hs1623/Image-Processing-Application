@@ -1,3 +1,4 @@
+// Volume.h
 #ifndef VOLUME_H
 #define VOLUME_H
 
@@ -9,26 +10,26 @@ public:
     Volume();
     ~Volume();
 
+    void setData(const std::vector<std::vector<unsigned char>>& newData);
+
     bool loadVolume(const std::string& directoryPath);
+
+    bool saveVolume(const std::string& directoryPath) const;
+
 
     int getWidth() const;
     int getHeight() const;
     int getDepth() const;
+
     int getChannels() const;
 
-    std::vector<unsigned char> getData(int sliceIndex) const;
-    void setVoxelValue(int z, int y, int x, unsigned char newValue);
-    // Method to save a single slice as an image
-    bool saveSliceAsImage(int sliceIndex, const std::string& filePath) const;
-
-    // Method to save all slices in the volume as images
-    bool saveVolumeAsImages(const std::string& outputDirectory) const;
+    const std::vector<std::vector<unsigned char>>& getData() const;
 
 private:
     void freeVolume();
 
     int width, height, depth, channels;
-    std::vector<std::vector<unsigned char>> data;
+    std::vector<std::vector<unsigned char>> data; // Stores volume data
 };
 
 #endif // VOLUME_H

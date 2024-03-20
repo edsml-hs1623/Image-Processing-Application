@@ -1,13 +1,4 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort -B /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug
 -- Configuring done (0.0s)
-CMake Error at CMakeLists.txt:23 (add_executable):
-  Cannot find source file:
-
-    src/main3d_blur.cpp
-
-
-CMake Error at CMakeLists.txt:23 (add_executable):
-  No SOURCES given to target: main3d_blur
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug

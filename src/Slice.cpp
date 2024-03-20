@@ -14,8 +14,10 @@ void Slice::sliceXZ(const Volume& volume, int y, const std::string& outputPath) 
     // Adjust y to 0-based index for internal use
     y = y - 1;
 
+    const auto& allData = volume.getData(); // Correctly access all volume data once
+
     for (int z = 0; z < depth; ++z) {
-        std::vector<unsigned char> currentSliceData = volume.getData(z); // Corrected to use getData correctly
+        const auto& currentSliceData = allData[z]; // Access specific slice
         for (int x = 0; x < width; ++x) {
             for (int ch = 0; ch < channels; ++ch) {
                 int index = ((y * width) + x) * channels + ch;
@@ -27,7 +29,6 @@ void Slice::sliceXZ(const Volume& volume, int y, const std::string& outputPath) 
     stbi_write_png(outputPath.c_str(), width, depth, channels, sliceData.data(), width * channels);
 }
 
-
 void Slice::sliceYZ(const Volume& volume, int x, const std::string& outputPath) {
     assert(x > 0 && x <= volume.getWidth()); // Ensure x is within bounds
     int height = volume.getHeight();
@@ -38,8 +39,10 @@ void Slice::sliceYZ(const Volume& volume, int x, const std::string& outputPath) 
     // Adjust x to 0-based index for internal use
     x = x - 1;
 
+    const auto& allData = volume.getData(); // Correctly access all volume data once
+
     for (int z = 0; z < depth; ++z) {
-        std::vector<unsigned char> currentSliceData = volume.getData(z); // Corrected to use getData correctly
+        const auto& currentSliceData = allData[z]; // Access specific slice
         for (int y = 0; y < height; ++y) {
             for (int ch = 0; ch < channels; ++ch) {
                 int index = (y * volume.getWidth() + x) * channels + ch;

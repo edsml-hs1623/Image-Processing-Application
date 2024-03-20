@@ -11,21 +11,23 @@ void Projection::mip(const Volume& volume, const std::string& outputPath, int mi
     int channels = volume.getChannels();
     std::vector<unsigned char> projectionData(width * height * channels, 0);
 
+    const auto& allData = volume.getData(); // Correctly access all volume data once
+
     // Adjust for 1-based indexing and validate range
     minZ = std::max(minZ - 1, 0); // Ensure not below 0
-    maxZ = std::min(maxZ - 1, volume.getDepth() - 1); // Ensure not beyond the last index
+    maxZ = std::min(maxZ - 1, static_cast<int>(allData.size()) - 1); // Ensure not beyond the last index
 
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             unsigned char maxIntensity = 0;
             for (int z = minZ; z <= maxZ; ++z) {
-                std::vector<unsigned char> sliceData = volume.getData(z); // Get slice data for z
-                unsigned char intensity = sliceData[(y * width + x) * channels]; // Correctly access the intensity value
+                const auto& sliceData = allData[z]; // Access specific slice
+                unsigned char intensity = sliceData[(y * width + x) * channels];
                 if (intensity > maxIntensity) {
                     maxIntensity = intensity;
                 }
             }
-            projectionData[(y * width + x) * channels] = maxIntensity; // Correct indexing for multi-channel support
+            projectionData[(y * width + x) * channels] = maxIntensity;
         }
     }
 
@@ -38,6 +40,8 @@ void Projection::minip(const Volume& volume, const std::string& outputPath, int 
     int channels = volume.getChannels();
     std::vector<unsigned char> projectionData(width * height * channels, std::numeric_limits<unsigned char>::max());
 
+    const auto& allData = volume.getData(); // Correctly access all volume data once
+
     // Adjust for 1-based indexing and validate range
     minZ = std::max(minZ - 1, 0);
     maxZ = std::min(maxZ - 1, volume.getDepth() - 1);
@@ -46,7 +50,7 @@ void Projection::minip(const Volume& volume, const std::string& outputPath, int 
         for (int x = 0; x < width; ++x) {
             unsigned char minIntensity = std::numeric_limits<unsigned char>::max();
             for (int z = minZ; z <= maxZ; ++z) {
-                std::vector<unsigned char> sliceData = volume.getData(z); // Get slice data for z
+                const auto& sliceData = allData[z]; // Get slice data for z
                 unsigned char intensity = sliceData[(y * width + x) * channels];
                 if (intensity < minIntensity) {
                     minIntensity = intensity;
@@ -66,6 +70,10 @@ void Projection::aip(const Volume& volume, const std::string& outputPath, int mi
     int channels = volume.getChannels();
     std::vector<unsigned char> projectionData(width * height * channels, 0);
 
+    const auto& allData = volume.getData(); // Correctly access all volume data once
+
+
+
     // Adjust for 1-based indexing and validate range
     minZ = std::max(minZ - 1, 0);
     maxZ = std::min(maxZ - 1, volume.getDepth() - 1);
@@ -74,7 +82,7 @@ void Projection::aip(const Volume& volume, const std::string& outputPath, int mi
         for (int x = 0; x < width; ++x) {
             unsigned long long totalIntensity = 0;
             for (int z = minZ; z <= maxZ; ++z) {
-                std::vector<unsigned char> sliceData = volume.getData(z); // Get slice data for z
+                const auto& sliceData = allData[z]; // Get slice data for z
                 totalIntensity += sliceData[(y * width + x) * channels];
             }
             projectionData[(y * width + x) * channels] = static_cast<unsigned char>(totalIntensity / (maxZ - minZ + 1)); // Correct indexing for multi-channel support
