@@ -183,6 +183,13 @@ build CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o: CXX_COMPILER__main3d_unscann
   OBJECT_DIR = CMakeFiles/main3d.dir
   OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
 
+build CMakeFiles/main3d.dir/src/User_3d.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/User_3d.cpp || cmake_object_order_depends_target_main3d
+  DEP_FILE = CMakeFiles/main3d.dir/src/User_3d.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
+  OBJECT_DIR = CMakeFiles/main3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target main3d
@@ -191,7 +198,7 @@ build CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o: CXX_COMPILER__main3d_unscann
 #############################################
 # Link the executable main3d
 
-build main3d: CXX_EXECUTABLE_LINKER__main3d_Debug CMakeFiles/main3d.dir/src/Image.cpp.o CMakeFiles/main3d.dir/src/main3d.cpp.o CMakeFiles/main3d.dir/src/ImageBlur.cpp.o CMakeFiles/main3d.dir/src/Volume.cpp.o CMakeFiles/main3d.dir/src/Slice.cpp.o CMakeFiles/main3d.dir/src/Projection.cpp.o CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o
+build main3d: CXX_EXECUTABLE_LINKER__main3d_Debug CMakeFiles/main3d.dir/src/Image.cpp.o CMakeFiles/main3d.dir/src/main3d.cpp.o CMakeFiles/main3d.dir/src/ImageBlur.cpp.o CMakeFiles/main3d.dir/src/Volume.cpp.o CMakeFiles/main3d.dir/src/Slice.cpp.o CMakeFiles/main3d.dir/src/Projection.cpp.o CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o CMakeFiles/main3d.dir/src/User_3d.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/main3d.dir
   POST_BUILD = :
