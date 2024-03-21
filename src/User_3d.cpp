@@ -73,22 +73,21 @@ void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, float& sig
 
 void User_3D::applyFilter(Volume& processedVolume, int filterChoice, int kernelSize, float sigma) {
     using namespace std::chrono;
-    auto start = high_resolution_clock::now(); // Start timing
+    auto start = high_resolution_clock::now();
 
     if (filterChoice == 1) {
-        // Apply Gaussian filter with the specified sigma
         ThreeDFilter::gaussianBlur(processedVolume, kernelSize, sigma);
         std::cout << "Gaussian filter applied with kernel size " << kernelSize << " and sigma " << sigma << ".\n";
     } else if (filterChoice == 2) {
-        // Apply Median filter
         ThreeDFilter::medianBlur(processedVolume, kernelSize);
         std::cout << "Median filter applied with kernel size " << kernelSize << ".\n";
     }
 
-    auto end = high_resolution_clock::now(); // End timing
-    auto duration = duration_cast<milliseconds>(end - start).count(); // Calculate duration
-    std::cout << "Filter application took " << duration << " milliseconds.\n";
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<seconds>(end - start).count(); // Convert to seconds
+    std::cout << "Filter application took " << duration << " seconds.\n";
 }
+
 
 
 void User_3D::generateProjections(const Volume& processedVolume, const std::string& filterType) {
@@ -104,19 +103,32 @@ void User_3D::generateProjections(const Volume& processedVolume, const std::stri
 }
 
 void User_3D::handleSliceGeneration(const Volume& processedVolume) {
-    int sliceIndex;
-    std::cout << "Enter slice index (0 to skip, range: 1 to " << originalVolume.getDepth() << "): ";
-    std::cin >> sliceIndex;
-    if (sliceIndex > 0) {
-        std::string sliceXZPath = outputDir + "/sliceXZ_" + std::to_string(sliceIndex) + ".png";
-        std::string sliceYZPath = outputDir + "/sliceYZ_" + std::to_string(sliceIndex) + ".png";
-        Slice::sliceXZ(processedVolume, sliceIndex - 1, sliceXZPath);
-        Slice::sliceYZ(processedVolume, sliceIndex - 1, sliceYZPath);
+    int sliceIndexXZ, sliceIndexYZ;
 
+    // Prompt for XZ slice index
+    std::cout << "Enter XZ slice index (0 to skip, range: 1 to " << originalVolume.getDepth() << "): ";
+    std::cin >> sliceIndexXZ;
+    if (sliceIndexXZ > 0 && sliceIndexXZ <= originalVolume.getDepth()) {
+        std::string sliceXZPath = outputDir + "/sliceXZ_" + std::to_string(sliceIndexXZ) + ".png"; // For XZ slice
+        Slice::sliceXZ(processedVolume, sliceIndexXZ - 1, sliceXZPath);
         std::cout << "Slice XZ generated and saved: " << sliceXZPath << "\n";
+    } else if (sliceIndexXZ != 0) {
+        std::cerr << "Invalid XZ slice index. Valid range is 1 to " << originalVolume.getDepth() << ".\n";
+    }
+
+
+    // Prompt for YZ slice index
+    std::cout << "Enter YZ slice index (0 to skip, range: 1 to " << originalVolume.getWidth() << "): ";
+    std::cin >> sliceIndexYZ;
+    if (sliceIndexYZ > 0 && sliceIndexYZ <= originalVolume.getWidth()) {
+        std::string sliceYZPath = outputDir + "/sliceYZ_" + std::to_string(sliceIndexYZ) + ".png"; // For YZ slice
+        Slice::sliceYZ(processedVolume, sliceIndexYZ - 1, sliceYZPath);
         std::cout << "Slice YZ generated and saved: " << sliceYZPath << "\n";
+    } else if (sliceIndexYZ != 0) {
+        std::cerr << "Invalid YZ slice index. Valid range is 1 to " << originalVolume.getWidth() << ".\n";
     }
 }
+
 
 void User_3D::handleSlabGeneration(const Volume& processedVolume) {
     int slabStartIndex, slabWidth;
