@@ -7,7 +7,7 @@
 #include <filesystem>
 #include <cstring> // for std::memcpy
 
-namespace fs = std::__fs::filesystem;
+namespace fs = std::filesystem;
 
 Volume::Volume() : width(0), height(0), depth(0), channels(0) {}
 

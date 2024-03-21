@@ -1,10 +1,10 @@
 .DS_Store
 
 #ignore cmakelists files
-**/CMakeLists.txt
+#**/CMakeLists.txt
 mainblur
 
-#ignoreScans
+#ignore Scans
 **/Scans
 
 #ignore build directory
@@ -23,7 +23,4 @@ mainblur
 
 **/.vscode/
 **/main
-
-#output
-
-**/Output
+**/.idea

@@ -24,11 +24,12 @@
  */
 
 #include "EdgeDetection.h"
+#include "ImageBlur.h"
+#include "ColourCorrection.h"
 #include <vector>
 #include <algorithm> // for std::min and std::max
 #include <filesystem>
-#include "ImageBlur.h"
-#include "ColourCorrection.h"
+#include <cmath>
 
 
 /**

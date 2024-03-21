@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <numeric>
+#include <array>
 
 float ThreeDFilter::gaussian(float x, float y, float z, float sigma) {
     return std::exp(-(x * x + y * y + z * z) / (2 * sigma * sigma)) / (std::sqrt(2 * M_PI) * sigma);

@@ -59,6 +59,10 @@ int selectImage(const std::vector<std::string>& images) {
 
         try {
             imageChoice = std::stoi(userInput);
+            // Check for 'Save and Exit' option
+            if (imageChoice == images.size()) {
+                return imageChoice; // Return the choice to exit the loop
+            }
             if (imageChoice < 1 || imageChoice > images.size()) {
                 std::cerr << "Invalid input, please try again.\n";
             }
@@ -85,7 +89,7 @@ int selectImage(const std::vector<std::string>& images) {
  */
 void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, Image& image) {
     // Construct the path to the results directory and ensure it exists
-    fs::path edgeDetectionDir = projectDir / "edgeDetection";
+    fs::path edgeDetectionDir = projectDir / "7-edgedetection";
     if (!fs::exists(edgeDetectionDir)) {
         fs::create_directories(edgeDetectionDir);
     }
@@ -122,20 +126,20 @@ void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, I
     // Switch different types of edge detection 
     switch (choice) {
     case 1:
-        edgeDetectionTypeDir = edgeDetectionDir / "Sobel";
-        edgeDetectionTypeStr = "Sobel";
+        edgeDetectionTypeDir = edgeDetectionDir / "sobel";
+        edgeDetectionTypeStr = "sobel";
         break;
     case 2:
-        edgeDetectionTypeDir = edgeDetectionDir / "Prewitt";
-        edgeDetectionTypeStr = "Prewitt";
+        edgeDetectionTypeDir = edgeDetectionDir / "prewitt";
+        edgeDetectionTypeStr = "prewitt";
         break;
     case 3:
-        edgeDetectionTypeDir = edgeDetectionDir / "Scharr";
-        edgeDetectionTypeStr = "Scharr";
+        edgeDetectionTypeDir = edgeDetectionDir / "scharr";
+        edgeDetectionTypeStr = "scharr";
         break;
     case 4:
-        edgeDetectionTypeDir = edgeDetectionDir / "Roberts Cross";
-        edgeDetectionTypeStr = "Roberts Cross";
+        edgeDetectionTypeDir = edgeDetectionDir / "robertscross";
+        edgeDetectionTypeStr = "robertscross";
         break;
     }
 
@@ -197,7 +201,7 @@ void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& ima
     std::cin >> kernelSize;
 
     // Construct the path to the results directory and ensure it exists
-    fs::path blurDir = projectDir / "blur";
+    fs::path blurDir = projectDir / "6-blur";
     if (!fs::exists(blurDir)) {
         fs::create_directories(blurDir);
     }
@@ -302,12 +306,12 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
     std::string ColourCorrectionTypeStr;
     switch (filter) {
     case 1:
-        ColourCorrectionTypeDir = projectDir / "grayscale";
+        ColourCorrectionTypeDir = projectDir / "1-grayscale";
         ColourCorrectionTypeStr = "";
 
         break;
     case 2:
-        ColourCorrectionTypeDir = projectDir / "brightness";
+        ColourCorrectionTypeDir = projectDir / "2-brightness";
         if (parameter > 0) {
             ColourCorrectionTypeStr = "_plus" + std::to_string(parameter);
         }
@@ -316,11 +320,11 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
         }
         break;
     case 3:
-        ColourCorrectionTypeDir = projectDir / "histogram";
+        ColourCorrectionTypeDir = projectDir / "3-histogram";
         ColourCorrectionTypeStr = "_" + histogramType;
         break;
     case 4:
-        ColourCorrectionTypeDir = projectDir / "threshold";
+        ColourCorrectionTypeDir = projectDir / "4-threshold";
         if (histogramType.empty()) {
             ColourCorrectionTypeStr = "_" + std::to_string(parameter);
         }
@@ -329,7 +333,7 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
         }
         break;
     case 5:
-        ColourCorrectionTypeDir = projectDir / "saltandpepper";
+        ColourCorrectionTypeDir = projectDir / "5-saltandpepper";
         ColourCorrectionTypeStr = "_" + std::to_string(parameter);
         break;
     }
@@ -363,50 +367,60 @@ void User_2D() {
             "tienshan.png",
             "vh_anatomy.png",
             "vh_anatomy_sp15.png",
-            "vh_ct.png"
+            "vh_ct.png",
+            "Save and Exit" // Option to exit the program
     };
 
-    // Ask user which image do they want to process
-    int imageChoice = selectImage(images);
+    // Loop until the user chooses the "Save and Exit" option
+    while (true) {
+        // Ask user which image do they want to process
+        int imageChoice = selectImage(images);
 
-    // Adjust the image file name based on user choice
-    std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
+        // Check if the user chose to exit
+        if (imageChoice == images.size()) {
+            std::cout << "Exiting the program." << std::endl;
+            break; // Exit the loop and the function
+        }
 
-    // Construct the full path to the image
-    fs::path imagePath = fs::path("../Images") / chosenImageFileName;
-    Image image;
-    if (!image.loadImage(imagePath.string())) {
-        std::cerr << "Failed to load image: " << imagePath.string() << std::endl;
-        return;
-    }
+        // Adjust the image file name based on user choice
+        std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
 
-    // Determine the project directory
-    fs::path projectDir = fs::path(imagePath).parent_path().parent_path() / "Output";  // Go up twice from Images to project root
+        // Construct the full path to the image
+        fs::path imagePath = fs::path("../Images") / chosenImageFileName;
+        Image image;
+        if (!image.loadImage(imagePath.string())) {
+            std::cerr << "Failed to load image: " << imagePath.string() << std::endl;
+            continue; // If image cannot be loaded, continue with the next iteration
+        }
 
+        // Determine the project directory
+        fs::path projectDir =
+                fs::path(imagePath).parent_path().parent_path() / "Output";  // Go up twice from Images to project root
 
+        // Choose 7 different filters based on user's choice
+        int filter;
+        std::cout
+                << "Choose filter:\n1. grayscale\n2. brightness\n3. histogram\n4. threshold\n5. salt and pepper\n6. blur\n7. edge detection\nEnter choice (1-7): ";
+        std::cin >> filter;
 
-    // Choose 7 different filters based on user's choice
-    int filter;
-    std::cout << "Choose filter:\n1. grayscale\n2. brightness\n3. histogram\n4. threshold\n5. salt and pepper\n6. blur\n7. edge detection\nEnter choice (1-7): ";
-    std::cin >> filter;
+        switch (filter) {
+            // Blur filter
+            case 6: {
+                applyBlur(projectDir, imagePath, image);
+                break;
+            }
 
-    switch (filter) {
-    // Blur filter
-    case 6: {
-        applyBlur(projectDir, imagePath, image);
-        break;
-    }
+            // Edge detection
+            case 7: {
+                applyEdgeDetection(projectDir, imagePath, image);
+                break;
+            }
 
-    // Edge detection
-    case 7: {
-        applyEdgeDetection(projectDir, imagePath, image);
-        break;
-    }
-
-    // Deal with other choices (1-5)
-    default: {
-        applyColourCorrection(projectDir, imagePath, image, filter);
-        break;
-    }
+            // Deal with other choices (1-5)
+            default: {
+                applyColourCorrection(projectDir, imagePath, image, filter);
+                break;
+            }
+        }
     }
 }
