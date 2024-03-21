@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="advanced-programming-group-selection-sort"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="advanced-programming-group-selection-sort">
+				<Option output="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/advanced-programming-group-selection-sort.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 advanced-programming-group-selection-sort"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="advanced-programming-group-selection-sort/fast">
+				<Option output="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/advanced-programming-group-selection-sort.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 advanced-programming-group-selection-sort/fast"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/mingw32-make.exe -f &quot;E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrection.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrection.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetection.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetection.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Filter.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Image.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Image.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlur.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlur.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Projection.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Projection.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Slice.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Slice.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilter.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilter.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_2D.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_2D.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3D.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3D.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Volume.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Volume.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/main.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/stb_image.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/stb_image_write.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
