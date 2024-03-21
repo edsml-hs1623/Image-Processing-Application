@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: src
+# Project: advanced-programming-group-selection-sort
 # Configurations: Debug
 # =============================================================================
 
@@ -39,179 +39,177 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug/
+cmake_ninja_workdir = E$:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target src
+# Object build statements for EXECUTABLE target advanced-programming-group-selection-sort
 
 
 #############################################
-# Order-only phony target for src
+# Order-only phony target for advanced-programming-group-selection-sort
 
-build cmake_object_order_depends_target_src: phony || CMakeFiles/src.dir
+build cmake_object_order_depends_target_advanced-programming-group-selection-sort: phony || CMakeFiles/advanced-programming-group-selection-sort.dir
 
-build CMakeFiles/src.dir/src/minimal.cpp.o: CXX_COMPILER__src_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/minimal.cpp || cmake_object_order_depends_target_src
-  DEP_FILE = CMakeFiles/src.dir/src/minimal.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/src.dir
-  OBJECT_FILE_DIR = CMakeFiles/src.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ColourCorrection.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrection.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ColourCorrection.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/EdgeDetection.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetection.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\EdgeDetection.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-# =============================================================================
-# Link build statements for EXECUTABLE target src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/Image.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/Image.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\Image.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ImageBlur.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlur.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ImageBlur.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-#############################################
-# Link the executable src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/Projection.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/Projection.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\Projection.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src/minimal.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
-  OBJECT_DIR = CMakeFiles/src.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = src
-  TARGET_PDB = src.dbg
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/Slice.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/Slice.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\Slice.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-# =============================================================================
-# Object build statements for EXECUTABLE target main
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ThreeDFilter.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilter.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ThreeDFilter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_2D.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/User_2D.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\User_2D.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-#############################################
-# Order-only phony target for main
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_3d.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/User_3d.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\User_3d.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/Volume.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/Volume.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\Volume.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build CMakeFiles/main.dir/src/Image.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Image.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/src/Image.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ColourCorrectionTest.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrectionTest.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ColourCorrectionTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build CMakeFiles/main.dir/src/main.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/main.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/src/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/EdgeDetectionTest.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetectionTest.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\EdgeDetectionTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build CMakeFiles/main.dir/src/ImageBlur.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/ImageBlur.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/src/ImageBlur.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ImageBlurTest.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlurTest.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ImageBlurTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-build CMakeFiles/main.dir/src/Volume.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Volume.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/src/Volume.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ProjectionTest.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ProjectionTest.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ProjectionTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/ThreeDFilterTest.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilterTest.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\ThreeDFilterTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-# =============================================================================
-# Link build statements for EXECUTABLE target main
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_unitTests.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/User_unitTests.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\User_unitTests.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
-
-#############################################
-# Link the executable main
-
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/Image.cpp.o CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/ImageBlur.cpp.o CMakeFiles/main.dir/src/Volume.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
-  OBJECT_DIR = CMakeFiles/main.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = main
-  TARGET_PDB = main.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target main3d
-
-
-#############################################
-# Order-only phony target for main3d
-
-build cmake_object_order_depends_target_main3d: phony || CMakeFiles/main3d.dir
-
-build CMakeFiles/main3d.dir/src/Image.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Image.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/Image.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/main3d.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/main3d.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/main3d.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/ImageBlur.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/ImageBlur.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/ImageBlur.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/Volume.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Volume.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/Volume.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/Slice.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Slice.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/Slice.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/Projection.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/Projection.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/Projection.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/ThreeDFilter.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
-
-build CMakeFiles/main3d.dir/src/User_3d.cpp.o: CXX_COMPILER__main3d_unscanned_Debug /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src/User_3d.cpp || cmake_object_order_depends_target_main3d
-  DEP_FILE = CMakeFiles/main3d.dir/src/User_3d.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/src
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/main3d.dir/src
+build CMakeFiles/advanced-programming-group-selection-sort.dir/src/main.cpp.obj: CXX_COMPILER__advanced-programming-group-selection-sort_unscanned_Debug E$:/CLionProjects/advanced-programming-group-selection-sort/src/main.cpp || cmake_object_order_depends_target_advanced-programming-group-selection-sort
+  DEP_FILE = CMakeFiles\advanced-programming-group-selection-sort.dir\src\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  OBJECT_FILE_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target main3d
+# Link build statements for EXECUTABLE target advanced-programming-group-selection-sort
 
 
 #############################################
-# Link the executable main3d
+# Link the executable advanced-programming-group-selection-sort.exe
 
-build main3d: CXX_EXECUTABLE_LINKER__main3d_Debug CMakeFiles/main3d.dir/src/Image.cpp.o CMakeFiles/main3d.dir/src/main3d.cpp.o CMakeFiles/main3d.dir/src/ImageBlur.cpp.o CMakeFiles/main3d.dir/src/Volume.cpp.o CMakeFiles/main3d.dir/src/Slice.cpp.o CMakeFiles/main3d.dir/src/Projection.cpp.o CMakeFiles/main3d.dir/src/ThreeDFilter.cpp.o CMakeFiles/main3d.dir/src/User_3d.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
-  OBJECT_DIR = CMakeFiles/main3d.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = main3d
-  TARGET_PDB = main3d.dbg
+build advanced-programming-group-selection-sort.exe: CXX_EXECUTABLE_LINKER__advanced-programming-group-selection-sort_Debug CMakeFiles/advanced-programming-group-selection-sort.dir/src/ColourCorrection.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/EdgeDetection.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/Image.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ImageBlur.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/Projection.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/Slice.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ThreeDFilter.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_2D.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_3d.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/Volume.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ColourCorrectionTest.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/EdgeDetectionTest.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ImageBlurTest.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ProjectionTest.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/ThreeDFilterTest.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/User_unitTests.cpp.obj CMakeFiles/advanced-programming-group-selection-sort.dir/src/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\advanced-programming-group-selection-sort.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\advanced-programming-group-selection-sort.dir\
+  TARGET_FILE = advanced-programming-group-selection-sort.exe
+  TARGET_IMPLIB = libadvanced-programming-group-selection-sort.dll.a
+  TARGET_PDB = advanced-programming-group-selection-sort.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D E:\CLionProjects\advanced-programming-group-selection-sort\cmake-build-debug && "D:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -222,7 +220,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort -B/Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D E:\CLionProjects\advanced-programming-group-selection-sort\cmake-build-debug && "D:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\CLionProjects\advanced-programming-group-selection-sort -BE:\CLionProjects\advanced-programming-group-selection-sort\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -232,15 +230,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build advanced-programming-group-selection-sort: phony advanced-programming-group-selection-sort.exe
+
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/cmake-build-debug
+# Folder: E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug
 
-build all: phony src main main3d
+build all: phony advanced-programming-group-selection-sort.exe
 
 # =============================================================================
 # Built-in targets
@@ -249,14 +249,14 @@ build all: phony src main main3d
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineRCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestRCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Determine-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake E$:/CLionProjects/advanced-programming-group-selection-sort/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/st2923/Desktop/c++/group_project/advanced-programming-group-selection-sort/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineRCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCCompiler.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestRCCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Determine-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake D$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake E$:/CLionProjects/advanced-programming-group-selection-sort/CMakeLists.txt: phony
 
 
 #############################################

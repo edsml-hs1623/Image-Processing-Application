@@ -6,6 +6,10 @@ mainblur
 
 #ignore Scans
 **/Scans
+#ignore Output
+**/Output
+#ignore TestOutputs
+**/TestOutputs
 
 #ignore build directory
 **/build
