@@ -2,7 +2,8 @@
 #include "Projection.h"
 #include "ThreeDFilter.h"
 #include "Slice.h"
-#include "User_3D.h"
+#include "User_3d.h"
+#include <chrono>
 
 #include <iostream>
 #include <filesystem>
@@ -44,7 +45,7 @@ void User_3D::selectDataset() {
 }
 
 
-void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, std::string& filterType) {
+void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, float& sigma, std::string& filterType) {
     std::cout << "Volume dimensions: " << originalVolume.getWidth() << " (W) x "
               << originalVolume.getHeight() << " (H) x " << originalVolume.getDepth() << " (D)\n";
     std::cout << "Choose filter: 1 for Gaussian, 2 for Median, 0 for no filter: ";
@@ -54,21 +55,41 @@ void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, std::strin
         std::cout << "Enter kernel size (e.g., 3 for 3x3x3): ";
         std::cin >> kernelSize;
         filterType = (filterChoice == 1) ? "Gaussian" : "Median";
+
+        if (filterChoice == 1) {
+            std::cout << "Enter sigma value (default is 2.0): ";
+            if (!(std::cin >> sigma)) { // If a non-numeric value is entered, revert to default
+                std::cin.clear(); // Clear the error flag
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip bad input
+                sigma = 2.0; // Default sigma
+            }
+        }
+
     } else {
         filterType = "NoFilter";
     }
 }
 
-void User_3D::applyFilter(Volume& processedVolume, int filterChoice, int kernelSize) {
+
+void User_3D::applyFilter(Volume& processedVolume, int filterChoice, int kernelSize, float sigma) {
+    using namespace std::chrono;
+    auto start = high_resolution_clock::now(); // Start timing
+
     if (filterChoice == 1) {
-        float sigma = 1.0; // Assuming a default sigma value
+        // Apply Gaussian filter with the specified sigma
         ThreeDFilter::gaussianBlur(processedVolume, kernelSize, sigma);
-        std::cout << "Gaussian filter applied with kernel size " << kernelSize << ".\n";
+        std::cout << "Gaussian filter applied with kernel size " << kernelSize << " and sigma " << sigma << ".\n";
     } else if (filterChoice == 2) {
+        // Apply Median filter
         ThreeDFilter::medianBlur(processedVolume, kernelSize);
         std::cout << "Median filter applied with kernel size " << kernelSize << ".\n";
     }
+
+    auto end = high_resolution_clock::now(); // End timing
+    auto duration = duration_cast<milliseconds>(end - start).count(); // Calculate duration
+    std::cout << "Filter application took " << duration << " milliseconds.\n";
 }
+
 
 void User_3D::generateProjections(const Volume& processedVolume, const std::string& filterType) {
     std::vector<std::string> projectionTypes = {"mip", "minip", "aip"};
@@ -122,11 +143,15 @@ void User_3D::handleSlabGeneration(const Volume& processedVolume) {
 
 void User_3D::run() {
     int kernelSize, filterChoice;
+
     std::string filterType;
-    setFilterParameters(filterChoice, kernelSize, filterType);
+    float sigma = 2.0; // Default value or prompt the user for it
+
+    setFilterParameters(filterChoice, kernelSize, sigma, filterType);
+
 
     Volume processedVolume = originalVolume;
-    applyFilter(processedVolume, filterChoice, kernelSize);
+    applyFilter(processedVolume, filterChoice, kernelSize, sigma);
 
     generateProjections(processedVolume, filterType);
     handleSliceGeneration(processedVolume);
