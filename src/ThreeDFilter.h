@@ -15,11 +15,14 @@ public:
     static void medianBlur(Volume& volume, int kernelSize);
 
 private:
-    // static float gaussian(float x, float y, float z, float sigma);
+
+    static float gaussian(float x, float y, float z, float sigma);
     static unsigned char median(std::vector<unsigned char>& values);
     static void selectionSort(std::vector<unsigned char>& arr);
-    static std::vector<float> precomputeGaussianKernel(int kernelSize, float sigma);
-    static void applyGaussianBlur1D(std::vector<unsigned char>& line, const std::vector<float>& kernel, int halfSize);
+
+    //helper functions that optimize the gaussian blur
+    //static std::vector<float> precomputeGaussianKernel(int kernelSize, float sigma);
+    // static void applyGaussianBlur1D(std::vector<unsigned char>& line, const std::vector<float>& kernel, int halfSize);
 };
 
 #endif // THREEDFILTER_H

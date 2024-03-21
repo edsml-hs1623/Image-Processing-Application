@@ -6,17 +6,16 @@
  * This header file declares the User_3D class, which manages user interactions and applies various
  * volume processing techniques such as filtering (Gaussian, Median), generating projections (MIP, MinIP, AIP),
  * and creating slices or slabs from the volume data. The class provides an interface for selecting datasets,
- * setting filter parameters, and applying these settings to process the volume data. It also guides users through
- * generating different types of projections and allows for the application of 2D filters on these projections.
- * The class uses functionalities from associated classes like Volume, Projection, and ThreeDFilter to perform
- * its tasks.
+ * setting filter parameters, applying these settings to process the volume data, and guiding users through
+ * the generation of different types of projections. Users have the option to apply 2D filters on these projections.
+ * It uses functionalities from associated classes like Volume, Projection, and ThreeDFilter to perform its tasks.
  *
  * Key Functionalities:
  *   - Interface for selecting and loading datasets to process.
  *   - Setting parameters for volume filtering and applying the filters.
  *   - Generating Maximum Intensity Projection (MIP), Minimum Intensity Projection (MinIP), and
  *     Average Intensity Projection (AIP) from the processed volume.
- *   - Generating slices and slabs from specific indices within the volume.
+ *   - Generating slices and slabs from specific indices within the volume with options for default or custom values.
  *   - Optional application of 2D filters on generated projections.
  *   - User interaction guides through the process and handles saving results to specified output directories.
  *
@@ -30,28 +29,38 @@
  *   - Slice.h
  *   - <filesystem>, <iostream>, <vector>, <string>
  */
+
 #ifndef USER_3D_H
 #define USER_3D_H
+
 #include "Volume.h"
 #include <string>
 #include <vector>
+
 class User_3D {
 public:
     User_3D(); // Constructor
-    void run();
+    void run(); // Main method to run the process
+
 private:
-    static constexpr char baseDir[] = "../Scans";
-    std::string datasetName;
-    std::string outputDir;
-    Volume originalVolume;
-    void selectDataset();
-    void setFilterParameters(int& filterChoice, int& kernelSize, float& sigma, std::string& filterType);
-    void applyFilter(Volume& processedVolume, int filterChoice, int kernelSize, float sigma);
-    void generateProjections(const Volume& processedVolume, const std::string& filterType, int kernelSize, std::vector<std::string>& projectionPaths);
-    void handleSliceGeneration(const Volume& processedVolume);
-    void handleSlabGeneration(const Volume& processedVolume);
-    bool askUserFor2DFilterApplication();
-    void process2DFiltersOnProjection(const std::string& projectionPath);
+    static constexpr char baseDir[] = "../Scans"; // Base directory for scans
+    std::string datasetName; // Selected dataset name
+    std::string outputDir; // Directory for saving output
+    Volume originalVolume; // Original volume data
+
+    void selectDataset(); // Method to select the dataset
+    void setFilterParameters(int& filterChoice, int& kernelSize, float& sigma, std::string& filterType); // Set filter parameters
+    void applyFilter(Volume& processedVolume, int filterChoice, int kernelSize, float sigma); // Apply chosen filter
+    void generateProjections(const Volume& processedVolume, const std::string& filterType, int kernelSize); // Generate projections
+    void handleSliceGeneration(const Volume& processedVolume); // Generate slices with user choice for default or custom values
+    void handleSlabGeneration(const Volume& processedVolume); // Generate slabs with user choice for default or custom values
+    bool askUserFor2DFilterApplication(); // Ask user for applying 2D filters
+    void process2DFiltersOnProjection(const std::string& projectionPath); // Apply 2D filters on projection
+
+    // New methods for enhanced functionality
+    void generateSlice(const Volume& processedVolume, int index, const std::string& plane); // Generate a single slice
+    void generateCustomSlab(const Volume& processedVolume, int start, int end); // Generate a custom slab
+    void generateDefaultSlabs(const Volume& processedVolume); // Generate default slabs based on dataset
 };
+
 #endif // USER_3D_H
- 
