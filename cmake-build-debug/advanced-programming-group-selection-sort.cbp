@@ -88,10 +88,22 @@
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrection.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrectionTest.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ColourCorrectionTest.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetection.cpp">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetection.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetectionTest.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/EdgeDetectionTest.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Filter.h">
@@ -109,10 +121,22 @@
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlur.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlurTest.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ImageBlurTest.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Projection.cpp">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Projection.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ProjectionTest.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ProjectionTest.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Slice.cpp">
@@ -121,10 +145,19 @@
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Slice.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Test.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilter.cpp">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilter.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilterTest.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/ThreeDFilterTest.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_2D.cpp">
@@ -133,10 +166,16 @@
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_2D.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3D.cpp">
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3d.cpp">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3D.h">
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_3d.h">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_unitTests.cpp">
+			<Option target="advanced-programming-group-selection-sort"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/User_unitTests.h">
 			<Option target="advanced-programming-group-selection-sort"/>
 		</Unit>
 		<Unit filename="E:/CLionProjects/advanced-programming-group-selection-sort/src/Volume.cpp">

@@ -27,4 +27,17 @@ add_executable(advanced-programming-group-selection-sort
         src/User_3D.cpp
         src/Volume.cpp
         src/Volume.h
+        src/ColourCorrectionTest.cpp
+        src/ColourCorrectionTest.h
+        src/Test.h
+        src/EdgeDetectionTest.cpp
+        src/EdgeDetectionTest.h
+        src/ImageBlurTest.cpp
+        src/ImageBlurTest.h
+        src/ProjectionTest.cpp
+        src/ProjectionTest.h
+        src/ThreeDFilterTest.cpp
+        src/ThreeDFilterTest.h
+        src/User_unitTests.cpp
+        src/User_unitTests.h
         src/main.cpp)

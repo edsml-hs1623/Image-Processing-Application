@@ -42,9 +42,10 @@
 namespace fs = std::filesystem;
 
 int selectImage(const std::vector<std::string>& images);
-void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, Image& image);
-void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& image);
-void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int filter);
+std::string applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int multiple);
+std::string applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& image, int multiple);
+std::string applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int filter);
+std::string getColourCorrectionSuffix (int filter);
 void User_2D();
 
 #endif // USER_2D_H

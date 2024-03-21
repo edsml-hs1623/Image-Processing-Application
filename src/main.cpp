@@ -27,7 +27,8 @@
 #include "ImageBlur.h"
 #include "ColourCorrection.h"
 #include "User_2D.h"
-#include "User_3d.h"
+#include "User_3D.h"
+#include "User_unitTests.h"
 
 #include <iostream>
 #include <filesystem>
@@ -39,7 +40,8 @@ int main() {
     std::cout << "Please select the mode you would like to use:" << std::endl;
     std::cout << "1. 2D Processing" << std::endl;
     std::cout << "2. 3D Processing" << std::endl;
-    std::cout << "Enter choice (1 or 2): ";
+    std::cout << "3. Unit Tests" << std::endl;
+    std::cout << "Enter choice (1, 2 or 3): ";
     std::cin >> choice;
 
     // Based on the user's choice, create the appropriate user object
@@ -48,7 +50,10 @@ int main() {
         User_2D();
     } else if (choice == 2) {
         User_3D user3D;
-        user3D.run();   
+        user3D.run();
+    } else if (choice == 3) {
+        User_unitTests unitTests;
+        unitTests.run();
     } else {
         std::cout << "Invalid choice. Exiting program." << std::endl;
         return 1;

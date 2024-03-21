@@ -39,6 +39,7 @@
 #include <iostream>
 #include <string>
 
+
 /**
  * Presents a list of images to the user and gets their choice.
  *
@@ -46,7 +47,7 @@
  * @return The index of the chosen image as an integer.
  */
 int selectImage(const std::vector<std::string>& images) {
-    std::cout << "Select an image to process:\n";
+    std::cout << "\nSelect an image to process:\n";
     for (size_t i = 0; i < images.size(); ++i) {
         std::cout << (i + 1) << ". " << images[i] << '\n';
     }
@@ -80,14 +81,16 @@ int selectImage(const std::vector<std::string>& images) {
     return imageChoice;
 }
 
+
 /**
  * Applies edge detection to a given image and saves the result.
  *
  * @param projectDir The filesystem path to the project directory.
  * @param imagePath The path to the input image.
  * @param image The Image object to which edge detection will be applied.
+ * @param multiple Flag indicating whether to apply multiple filters.
  */
-void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, Image& image) {
+std::string applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int multiple) {
     // Construct the path to the results directory and ensure it exists
     fs::path edgeDetectionDir = projectDir / "7-edgedetection";
     if (!fs::exists(edgeDetectionDir)) {
@@ -102,7 +105,7 @@ void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, I
     int choice;
     bool validChoice = false;
     while (!validChoice) {
-        std::cout << "Choose edge detection method:\n1. Sobel\n2. Prewitt\n3. Scharr\n4. Roberts Cross\nEnter choice (1-4): ";
+        std::cout << "\nChoose edge detection method:\n1. Sobel\n2. Prewitt\n3. Scharr\n4. Roberts Cross\nEnter choice (1-4): ";
         std::string userInput;
         std::cin >> userInput;
 
@@ -123,24 +126,24 @@ void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, I
         }
     }
 
-    // Switch different types of edge detection 
+    // Switch different types of edge detection
     switch (choice) {
-    case 1:
-        edgeDetectionTypeDir = edgeDetectionDir / "sobel";
-        edgeDetectionTypeStr = "sobel";
-        break;
-    case 2:
-        edgeDetectionTypeDir = edgeDetectionDir / "prewitt";
-        edgeDetectionTypeStr = "prewitt";
-        break;
-    case 3:
-        edgeDetectionTypeDir = edgeDetectionDir / "scharr";
-        edgeDetectionTypeStr = "scharr";
-        break;
-    case 4:
-        edgeDetectionTypeDir = edgeDetectionDir / "robertscross";
-        edgeDetectionTypeStr = "robertscross";
-        break;
+        case 1:
+            edgeDetectionTypeDir = edgeDetectionDir / "sobel";
+            edgeDetectionTypeStr = "sobel";
+            break;
+        case 2:
+            edgeDetectionTypeDir = edgeDetectionDir / "prewitt";
+            edgeDetectionTypeStr = "prewitt";
+            break;
+        case 3:
+            edgeDetectionTypeDir = edgeDetectionDir / "scharr";
+            edgeDetectionTypeStr = "scharr";
+            break;
+        case 4:
+            edgeDetectionTypeDir = edgeDetectionDir / "robertscross";
+            edgeDetectionTypeStr = "robertscross";
+            break;
     }
 
     EdgeOperator edgeOperator = EdgeDetection::getEdgeOperatorFromChoice(choice);
@@ -152,16 +155,26 @@ void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, I
         fs::create_directories(edgeDetectionTypeDir);
     }
 
-    // Save the processed image to corresponding folder 
-    std::string baseFileName = fs::path(imagePath).stem().string(); // Extract base name without extension
-    std::string outputFileName = (edgeDetectionTypeDir / (baseFileName + "_" + edgeDetectionTypeStr + ".png")).string();
+    std::string baseFileName;
+    std::string outputFileName;
+    std::string suffix;
 
-    if (!image.saveImage(outputFileName, "png")) {
-        std::cerr << "Failed to save image: " << outputFileName << std::endl;
-        return;
+    if (multiple == 1){
+        // Save the processed image to corresponding folder
+        std::string baseFileName = fs::path(imagePath).stem().string(); // Extract base name without extension
+        std::string outputFileName = (edgeDetectionTypeDir / (baseFileName + "_" + edgeDetectionTypeStr + ".png")).string();
+
+        if (!image.saveImage(outputFileName, "png")) {
+            std::cerr << "Failed to save image: " << outputFileName << std::endl;
+        }
+        std::cout << "\nProcessed image saved to " << outputFileName << std::endl;
+        return "";
     }
-    std::cout << "Processed image saved to " << outputFileName << std::endl;
+    else{
+        return edgeDetectionTypeStr;
+    }
 }
+
 
 /**
  * Applies a blur effect to a given image and saves the result.
@@ -169,13 +182,14 @@ void applyEdgeDetection(const fs::path& projectDir, const fs::path& imagePath, I
  * @param projectDir The filesystem path to the project directory.
  * @param imagePath The path to the input image.
  * @param image The Image object to which the blur effect will be applied.
+ * @param multiple Flag indicating whether to apply multiple filters.
  */
-void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& image) {
+std::string applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& image, int multiple) {
     // Get user's choice of blur methods and detect invalid input
     int choice;
     bool validChoice = false;
     while (!validChoice) {
-        std::cout << "Choose blur method:\n1. Box Blur\n2. Median Blur\n3. Gaussian Blur\nEnter choice (1-3): ";
+        std::cout << "\nChoose blur method:\n1. Box Blur\n2. Median Blur\n3. Gaussian Blur\nEnter choice (1-3): ";
         std::string userInput;
         std::cin >> userInput;
 
@@ -209,18 +223,18 @@ void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& ima
     fs::path blurTypeDir; // Directory path for the specific blur type
     std::string blurTypeStr;
     switch (choice) {
-    case 1:
-        blurTypeDir = blurDir / "box";
-        blurTypeStr = "Box";
-        break;
-    case 2:
-        blurTypeDir = blurDir / "median";
-        blurTypeStr = "Median";
-        break;
-    case 3:
-        blurTypeDir = blurDir / "gaussian";
-        blurTypeStr = "Gaussian";
-        break;
+        case 1:
+            blurTypeDir = blurDir / "box";
+            blurTypeStr = "Box";
+            break;
+        case 2:
+            blurTypeDir = blurDir / "median";
+            blurTypeStr = "Median";
+            break;
+        case 3:
+            blurTypeDir = blurDir / "gaussian";
+            blurTypeStr = "Gaussian";
+            break;
     }
 
     // Ensure the directory exists
@@ -231,37 +245,44 @@ void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& ima
     // validate user's choice and create the blur object
     ImageBlur* blur = nullptr;
     switch (choice) {
-    case 1:
-        blur = new ImageBlur(Box, kernelSize);
-        break;
-    case 2:
-        blur = new ImageBlur(Median, kernelSize);
-        break;
-    case 3:
-        blur = new ImageBlur(Gaussian, kernelSize);
-        break;
+        case 1:
+            blur = new ImageBlur(Box, kernelSize);
+            break;
+        case 2:
+            blur = new ImageBlur(Median, kernelSize);
+            break;
+        case 3:
+            blur = new ImageBlur(Gaussian, kernelSize);
+            break;
     }
 
     // Check if blur was successfully created before proceeding
     if (!blur) {
         std::cerr << "Blur object creation failed." << std::endl;
-        return;
+        return "";
     }
 
     blur->apply(image);
     delete blur;
 
-    // Save the processed image to corresponding folder 
-    std::string baseFileName = fs::path(imagePath).stem().string();
     std::string kernelSizeStr = std::to_string(kernelSize) + "x" + std::to_string(kernelSize);
-    std::string outputFileName = (blurTypeDir / (baseFileName + "_" + kernelSizeStr + ".png")).string();
 
-    if (!image.saveImage(outputFileName, "png")) {
-        std::cerr << "Failed to save image: " << outputFileName << std::endl;
-        return;
+    if (multiple == 1){
+        // Save the processed image to corresponding folder
+        std::string baseFileName = fs::path(imagePath).stem().string();
+        std::string outputFileName = (blurTypeDir / (baseFileName + "_" + kernelSizeStr + ".png")).string();
+
+        if (!image.saveImage(outputFileName, "png")) {
+            std::cerr << "Failed to save image: " << outputFileName << std::endl;
+        }
+        std::cout << "\nProcessed image saved to " << outputFileName << std::endl;
+        return "";
     }
-    std::cout << "Processed image saved to " << outputFileName << std::endl;
+    else{
+        return kernelSizeStr;
+    }
 }
+
 
 /**
  * Applies color correction to a given image and saves the result.
@@ -270,15 +291,16 @@ void applyBlur(const fs::path& projectDir, const fs::path& imagePath, Image& ima
  * @param imagePath The path to the input image.
  * @param image The Image object to which color correction will be applied.
  * @param filter The type of color correction filter to be applied.
+ * @param multiple Flag indicating whether to apply multiple filters.
  */
-void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int filter) {
+std::string applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath, Image& image, int filter, int multiple) {
     ColorSpace colorSpace = ColorSpace::HSV; // Default to HSV
     std::string histogramType;
     if ((filter == 3 || filter == 4) && image.getChannels() != 1) {
         std::cout << "Choose color space for processing:\n"
-            << "1. HSL\n"
-            << "2. HSV\n"
-            << "Enter choice (1-2): ";
+                  << "1. HSL\n"
+                  << "2. HSV\n"
+                  << "Enter choice (1-2): ";
         int colorSpaceChoice;
         std::cin >> colorSpaceChoice;
         if (colorSpaceChoice == 1) {
@@ -305,53 +327,76 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
     fs::path ColourCorrectionTypeDir;
     std::string ColourCorrectionTypeStr;
     switch (filter) {
-    case 1:
-        ColourCorrectionTypeDir = projectDir / "1-grayscale";
-        ColourCorrectionTypeStr = "";
+        case 1:
+            ColourCorrectionTypeDir = projectDir / "1-grayscale";
+            ColourCorrectionTypeStr = "";
 
-        break;
-    case 2:
-        ColourCorrectionTypeDir = projectDir / "2-brightness";
-        if (parameter > 0) {
-            ColourCorrectionTypeStr = "_plus" + std::to_string(parameter);
-        }
-        else {
-            ColourCorrectionTypeStr = "_minus" + std::to_string(std::abs(parameter));
-        }
-        break;
-    case 3:
-        ColourCorrectionTypeDir = projectDir / "3-histogram";
-        ColourCorrectionTypeStr = "_" + histogramType;
-        break;
-    case 4:
-        ColourCorrectionTypeDir = projectDir / "4-threshold";
-        if (histogramType.empty()) {
+            break;
+        case 2:
+            ColourCorrectionTypeDir = projectDir / "2-brightness";
+            if (parameter > 0) {
+                ColourCorrectionTypeStr = "_plus" + std::to_string(parameter);
+            }
+            else {
+                ColourCorrectionTypeStr = "_minus" + std::to_string(std::abs(parameter));
+            }
+            break;
+        case 3:
+            ColourCorrectionTypeDir = projectDir / "3-histogram";
+            ColourCorrectionTypeStr = "_" + histogramType;
+            break;
+        case 4:
+            ColourCorrectionTypeDir = projectDir / "4-threshold";
+            if (histogramType.empty()) {
+                ColourCorrectionTypeStr = "_" + std::to_string(parameter);
+            }
+            else {
+                ColourCorrectionTypeStr = "_" + histogramType + "_" + std::to_string(parameter);
+            }
+            break;
+        case 5:
+            ColourCorrectionTypeDir = projectDir / "5-saltandpepper";
             ColourCorrectionTypeStr = "_" + std::to_string(parameter);
-        }
-        else {
-            ColourCorrectionTypeStr = "_" + histogramType + "_" + std::to_string(parameter);
-        }
-        break;
-    case 5:
-        ColourCorrectionTypeDir = projectDir / "5-saltandpepper";
-        ColourCorrectionTypeStr = "_" + std::to_string(parameter);
-        break;
+            break;
     }
     // Ensure the directory exists
     if (!fs::exists(ColourCorrectionTypeDir)) {
         fs::create_directories(ColourCorrectionTypeDir);
     }
 
-    std::string baseFileName = fs::path(imagePath).stem().string(); // Extract base name without extension
-    std::string outputFileName = (ColourCorrectionTypeDir / (baseFileName + ColourCorrectionTypeStr + ".png")).string();
+    if (multiple == 1){
+        std::string baseFileName = fs::path(imagePath).stem().string(); // Extract base name without extension
+        std::string outputFileName = (ColourCorrectionTypeDir / (baseFileName + ColourCorrectionTypeStr + ".png")).string();
 
-    if (!image.saveImage(outputFileName, "png")) {
-        std::cerr << "Failed to save corrected image: " << outputFileName << std::endl;
-        return;
+        if (!image.saveImage(outputFileName, "png")) {
+            std::cerr << "Failed to save corrected image: " << outputFileName << std::endl;
+        }
+        std::cout << "\nProcessed image saved to " << outputFileName << std::endl;
+        return "";
     }
-
-    std::cout << "Corrected image saved to " << outputFileName << std::endl;
+    else{
+        return ColourCorrectionTypeStr;
+    }
 }
+
+
+/**
+ * Retrieves the suffix for a color correction filter.
+ *
+ * @param filter The filter index.
+ * @return The suffix corresponding to the color correction filter.
+ */
+std::string getColourCorrectionSuffix (int filter){
+    switch(filter){
+        case 1: return "grayscale";
+        case 2: return "brightness";
+        case 3: return "histogram";
+        case 4: return "threshold";
+        case 5: return "saltandpepper";
+        default: return "";
+    }
+}
+
 
 /**
  * Main function to interact with the user for applying various image processing techniques.
@@ -359,68 +404,176 @@ void applyColourCorrection(const fs::path& projectDir, const fs::path& imagePath
  * edge detection, and color correction.
  */
 void User_2D() {
-    // Present the list of images here
-    std::vector<std::string> images = {
-            "dimorphos.png",
-            "gracehopper.png",
-            "stinkbug.png",
-            "tienshan.png",
-            "vh_anatomy.png",
-            "vh_anatomy_sp15.png",
-            "vh_ct.png",
-            "Save and Exit" // Option to exit the program
-    };
 
-    // Loop until the user chooses the "Save and Exit" option
-    while (true) {
-        // Ask user which image do they want to process
-        int imageChoice = selectImage(images);
+    // Define the path to the directory containing images
+    fs::path imagesDir = fs::path("../Images");
 
-        // Check if the user chose to exit
-        if (imageChoice == images.size()) {
-            std::cout << "Exiting the program." << std::endl;
-            break; // Exit the loop and the function
+    // Check if the directory exists
+    if (!fs::exists(imagesDir) || !fs::is_directory(imagesDir)) {
+        std::cerr << "Images directory not found or is not a valid directory." << std::endl;
+        return;
+    }
+
+    // Collect the names of image files in the directory
+    std::vector<std::string> images;
+    for (const auto& entry : fs::directory_iterator(imagesDir)) {
+        if (entry.is_regular_file()) {
+            images.push_back(entry.path().filename().string());
+        }
+    }
+
+    // Add the "Save and Exit" option
+    images.push_back("Save and Exit");
+
+
+
+    // Using single filter or multiple filters
+    int multiple;
+    std::cout << "\nChoose single filter or multiple filters:\n"
+              << "1. single\n"
+              << "2. multiple\n"
+              << "Enter 1 or 2: ";
+    std::cin >> multiple;
+    switch (multiple){
+
+        // Single filter
+        case 1: {
+
+            // Loop until the user chooses the "Save and Exit" option
+            while (true) {
+                // Ask user which image do they want to process
+                int imageChoice = selectImage(images);
+
+                // Check if the user chose to exit
+                if (imageChoice == images.size()) {
+                    std::cout << "Exiting the program." << std::endl;
+                    break; // Exit the loop and the function
+                }
+
+                // Adjust the image file name based on user choice
+                std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
+
+                // Construct the full path to the image
+                fs::path imagePath = fs::path("../Images") / chosenImageFileName;
+                Image image;
+                if (!image.loadImage(imagePath.string())) {
+                    std::cerr << "Failed to load image: " << imagePath.string() << std::endl;
+                    continue; // If image cannot be loaded, continue with the next iteration
+                }
+
+                // Determine the project directory
+                fs::path projectDir =
+                        fs::path(imagePath).parent_path().parent_path() / "Output";  // Go up twice from Images to project root
+
+                // Choose 7 different filters based on user's choice
+                int filter;
+                std::cout << "\nChoose filter:\n1. grayscale\n2. brightness\n3. histogram\n4. threshold\n5. salt and pepper\n6. blur\n7. edge detection\nEnter choice (1-7): ";
+                std::cin >> filter;
+
+                switch (filter) {
+                    // Blur filter
+                    case 6: {
+                        applyBlur(projectDir, imagePath, image, multiple);
+                        break;
+                    }
+
+                        // Edge detection
+                    case 7: {
+                        applyEdgeDetection(projectDir, imagePath, image, multiple);
+                        break;
+                    }
+
+                        // Deal with other choices (1-5)
+                    default: {
+                        applyColourCorrection(projectDir, imagePath, image, filter, multiple);
+                        break;
+                    }
+                }
+            }
+            break;
         }
 
-        // Adjust the image file name based on user choice
-        std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
 
-        // Construct the full path to the image
-        fs::path imagePath = fs::path("../Images") / chosenImageFileName;
-        Image image;
-        if (!image.loadImage(imagePath.string())) {
-            std::cerr << "Failed to load image: " << imagePath.string() << std::endl;
-            continue; // If image cannot be loaded, continue with the next iteration
-        }
+            // Multiple filters
+        case 2: {
+            // Ask user which image do they want to process
+            int imageChoice = selectImage(images);
 
-        // Determine the project directory
-        fs::path projectDir =
-                fs::path(imagePath).parent_path().parent_path() / "Output";  // Go up twice from Images to project root
+            // Adjust the image file name based on user choice
+            std::string chosenImageFileName = images[imageChoice - 1]; // Subtract 1 for correct index
 
-        // Choose 7 different filters based on user's choice
-        int filter;
-        std::cout
-                << "Choose filter:\n1. grayscale\n2. brightness\n3. histogram\n4. threshold\n5. salt and pepper\n6. blur\n7. edge detection\nEnter choice (1-7): ";
-        std::cin >> filter;
-
-        switch (filter) {
-            // Blur filter
-            case 6: {
-                applyBlur(projectDir, imagePath, image);
-                break;
+            // Construct the full path to the image
+            fs::path imagePath = fs::path("../Images") / chosenImageFileName;
+            Image image;
+            if (!image.loadImage(imagePath.string())) {
+                std::cerr << "Failed to load image: " << imagePath.string() << std::endl;
             }
 
-            // Edge detection
-            case 7: {
-                applyEdgeDetection(projectDir, imagePath, image);
-                break;
+            // Determine the project directory
+            fs::path projectDir =
+                    fs::path(imagePath).parent_path().parent_path() / "Output";  // Go up twice from Images to project root
+
+            // the loop for multiple filter
+            // create a folder for these images
+            fs::path othersDir = projectDir / "others";
+            if (!fs::exists(othersDir)) {
+                fs::create_directories(othersDir);
             }
 
-            // Deal with other choices (1-5)
-            default: {
-                applyColourCorrection(projectDir, imagePath, image, filter);
-                break;
+            // to keep all the names
+            std::string suffixStr;
+            std::string suffix;
+
+
+            // Loop until the user chooses the "Save and Exit" option
+            while (true){
+                int filter;
+                std::cout << "\nChoose filter:\n1. grayscale\n2. brightness\n3. histogram\n4. threshold\n5. salt and pepper\n6. blur\n7. edge detection\n8. Save and Exit\nEnter choice (1-8): ";
+                std::cin >> filter;
+
+                if (filter == 8){
+                    break;
+                }
+
+                // Applied the filter and save the suffix
+                switch (filter) {
+                    // Blur filter
+                    case 6: {
+                        suffix = "blur_";
+                        suffix += applyBlur(projectDir, imagePath, image, multiple);
+                        break;
+                    }
+
+                        // Edge detection
+                    case 7: {
+                        suffix = "edgeDetection_";
+                        suffix += applyEdgeDetection(projectDir, imagePath, image, multiple);
+                        break;
+                    }
+
+                        // Deal with other choices (1-5)
+                    default: {
+                        suffix = getColourCorrectionSuffix(filter);
+                        suffix += applyColourCorrection(projectDir, imagePath, image, filter, multiple);
+                        break;
+                    }
+                }
+                suffixStr += "_";
+                suffixStr += suffix;
             }
+
+            // Put every suffix together and save it
+            std::string baseFileName = fs::path(imagePath).stem().string(); // Extract base name without extension
+            std::string outputFileName = (othersDir / (baseFileName + suffixStr + ".png")).string();
+
+            if (!image.saveImage(outputFileName, "png")) {
+                std::cerr << "Failed to save corrected image: " << outputFileName << std::endl;
+                return;
+            }
+
+            std::cout << "\nProcessed image saved to " << outputFileName << std::endl;
+
+            break;
         }
     }
 }

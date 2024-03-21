@@ -54,8 +54,6 @@ private:
     void generateProjections(const Volume& processedVolume, const std::string& filterType, int kernelSize); // Generate projections
     void handleSliceGeneration(const Volume& processedVolume); // Generate slices with user choice for default or custom values
     void handleSlabGeneration(const Volume& processedVolume); // Generate slabs with user choice for default or custom values
-    bool askUserFor2DFilterApplication(); // Ask user for applying 2D filters
-    void process2DFiltersOnProjection(const std::string& projectionPath); // Apply 2D filters on projection
 
     // New methods for enhanced functionality
     void generateSlice(const Volume& processedVolume, int index, const std::string& plane); // Generate a single slice

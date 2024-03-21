@@ -4,6 +4,13 @@
 #include <numeric>
 #include <array>
 
+template <typename T>
+T clamp(T val, T minVal, T maxVal) {
+    if (val < minVal) return minVal;
+    if (val > maxVal) return maxVal;
+    return val;
+}
+
 float ThreeDFilter::gaussian(float x, float y, float z, float sigma) {
     return std::exp(-(x * x + y * y + z * z) / (2 * sigma * sigma)) / (std::sqrt(2 * M_PI) * sigma);
 }
@@ -231,9 +238,9 @@ void ThreeDFilter::medianBlur(Volume& volume, int kernelSize) {
                     for (int kz = -halfSize; kz <= halfSize; kz++) {
                         for (int ky = -halfSize; ky <= halfSize; ky++) {
                             for (int kx = -halfSize; kx <= halfSize; kx++) {
-                                int nx = std::clamp(x + kx, 0, width - 1);
-                                int ny = std::clamp(y + ky, 0, height - 1);
-                                int nz = std::clamp(z + kz, 0, depth - 1);
+                                int nx = clamp(x + kx, 0, width - 1);
+                                int ny = clamp(y + ky, 0, height - 1);
+                                int nz = clamp(z + kz, 0, depth - 1);
                                 unsigned char value = volume.getData()[nz][((ny * width + nx) * channels) + ch];
                                 maxVal = std::max(maxVal, value);
                                 minVal = std::min(minVal, value);
