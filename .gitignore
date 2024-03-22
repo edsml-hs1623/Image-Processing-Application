@@ -6,7 +6,7 @@
 #ignore Scans
 **/Scans
 #ignore Output
-#**/Output
+**/Output
 #ignore TestOutputs
 **/TestOutputs
 
