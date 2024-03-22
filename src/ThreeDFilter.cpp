@@ -1,3 +1,36 @@
+/**
+ * @file ThreeDFilter.h
+ *
+ * @brief Implementation of 3D image processing techniques, including Gaussian and Median blurs.
+ *
+ * This file provides the implementation of various 3D image processing techniques, primarily focusing on
+ * Gaussian and Median blur filters. These filters are applied to Volume objects representing 3D images or data sets.
+ * The Gaussian blur is implemented by convolving the image with a Gaussian kernel, while the Median blur is
+ * realized through a non-linear filtering approach that replaces each voxel's intensity with the median
+ * of intensities in its neighborhood.
+ *
+ * Key Functionalities:
+ *   - Gaussian Blur: Applies a Gaussian blur filter to smooth 3D images, useful for reducing image noise and details.
+ *   - Median Blur: Applies a Median blur filter to reduce noise without creating artifacts.
+ *   - Utility Functions: Includes functions for value clamping and kernel generation.
+ *
+ * Usage:
+ *   Volume myVolume;
+ *   ThreeDFilter filter;
+ *   filter.gaussianBlur(myVolume, 5, 1.0); // Apply Gaussian blur with a 5x5x5 kernel and sigma = 1.0
+ *   filter.medianBlur(myVolume, 3); // Apply Median blur with a 3x3x3 kernel
+ *
+ * @note The filters modify the Volume object in-place. Ensure that you have a backup of the original
+ *       data if needed.
+ *
+ * Dependencies:
+ *   - Volume.h for the Volume class definition and manipulation.
+ *   - <cmath> and <vector> for mathematical operations and data storage.
+ *   - <numeric> and <array> for additional array operations and fixed-size array storage.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
+ */
 #include "ThreeDFilter.h"
 #include <cmath>
 #include <vector>
@@ -11,10 +44,24 @@ T clamp(T val, T minVal, T maxVal) {
     return val;
 }
 
+/**
+ * @brief Calculates the Gaussian value for a given point and sigma.
+ * @param x The x-coordinate of the point.
+ * @param y The y-coordinate of the point.
+ * @param z The z-coordinate of the point.
+ * @param sigma The standard deviation of the Gaussian distribution.
+ * @return The Gaussian function value at the given point.
+ */
 float ThreeDFilter::gaussian(float x, float y, float z, float sigma) {
     return std::exp(-(x * x + y * y + z * z) / (2 * sigma * sigma)) / (std::sqrt(2 * M_PI) * sigma);
 }
 
+/**
+ * @brief Applies a Gaussian blur to a given volume.
+ * @param volume A reference to the Volume object to blur.
+ * @param kernelSize The size of the Gaussian kernel (must be an odd number).
+ * @param sigma The standard deviation of the Gaussian distribution used for the kernel.
+ */
 void ThreeDFilter::gaussianBlur(Volume& volume, int kernelSize, float sigma) {
     int width = volume.getWidth();
     int height = volume.getHeight();
@@ -220,6 +267,11 @@ void ThreeDFilter::gaussianBlur(Volume& volume, int kernelSize, float sigma) {
 //     volume.setData(newVolumeData);
 // }
 
+/**
+ * @brief Applies a median blur to a given volume.
+ * @param volume A reference to the Volume object to apply the median blur.
+ * @param kernelSize The size of the cubic kernel (must be an odd number).
+ */
 void ThreeDFilter::medianBlur(Volume& volume, int kernelSize) {
     int width = volume.getWidth();
     int height = volume.getHeight();
@@ -259,7 +311,11 @@ void ThreeDFilter::medianBlur(Volume& volume, int kernelSize) {
     volume.setData(newVolumeData);
 }
 
-
+/**
+ * @brief Calculates the median value from a vector of unsigned characters.
+ * @param values A reference to the vector of unsigned char values.
+ * @return The median value as an unsigned char.
+ */
 unsigned char ThreeDFilter::median(std::vector<unsigned char>& values) {
     selectionSort(values);
     if (values.size() % 2 == 0) {
@@ -269,6 +325,10 @@ unsigned char ThreeDFilter::median(std::vector<unsigned char>& values) {
     }
 }
 
+/**
+ * @brief Sorts a vector of unsigned char values using the selection sort algorithm.
+ * @param arr A reference to the vector of unsigned char values to be sorted.
+ */
 void ThreeDFilter::selectionSort(std::vector<unsigned char>& arr) {
     for (size_t i = 0; i < arr.size() - 1; i++) {
         size_t min_idx = i;

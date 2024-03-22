@@ -1,4 +1,9 @@
-// ColourCorrectionTest.cpp
+/**
+ * @file ColourCorrectionTest.cpp
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
+ */
 #include "ColourCorrectionTest.h"
 #include "ColourCorrection.h"
 #include "Image.h"

@@ -23,6 +23,9 @@
  *
  * @note The Image class should be included and properly defined for this interface to work.
  *       Derived filter classes must implement the apply method for specific filtering operations.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #ifndef FILTER_H

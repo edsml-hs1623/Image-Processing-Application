@@ -1,4 +1,9 @@
-// Slice.h
+/**
+ * @file Slice.h
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
+ */
 #ifndef SLICE_H
 #define SLICE_H
 

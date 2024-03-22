@@ -21,6 +21,9 @@
  *
  * @note This class relies on other image processing classes like ColourCorrection and ImageBlur
  *       and expects them to be defined and included in the project.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #include "EdgeDetection.h"

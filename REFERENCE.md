@@ -1,0 +1,22 @@
+- [1] Compilation errors - https://chat.openai.com/share/5e53f48a-c693-4786-b885-391850d2d879
+- [2] Understanding file paths and stb_image.h- https://chat.openai.com/share/faaa182d-fc31-4523-ab5e-ca4366602679
+- [3] Debugging User input  - https://chat.openai.com/share/82c8faf6-731b-47ef-b854-825b1c5ef73b
+- [4] Understanding EdgeDetection - https://chat.openai.com/share/085085d7-dd5b-4719-905b-a2c8449a1008
+- [5] Sobel EdgeDetection - https://chat.openai.com/share/6955480f-4606-48ea-8632-50eddcbd0d7b
+- [6] Sobel EdgeDetection - https://chat.openai.com/share/bb0cfb67-391a-424f-a619-318abfbf504e
+- [7] Debugging Edge Detection for colour images turned to grayscale (issue with multi-channel grayscale) - https://chat.openai.com/share/10088c64-c13c-4b12-83e0-ad2828ced84e
+- [8] Merging 2D filters for use in Edge Detection - https://chat.openai.com/share/d8f2786c-d130-413f-9717-ba85821ff6d7
+- [9] Grayscale - Stokes, Michael; Anderson, Matthew; Chandrasekar, Srinivasan; Motta, Ricardo (1996-11-05). "A Standard Default Color Space for the Internet – sRGB"
+- [10] Brightness - https://csee.bangor.ac.uk/project-rainbow/learn-hue-saturation-and-brightness-hsb-colour-coding/
+- [11] Histogram Equalisation - Hum, Yan Chai; Lai, Khin Wee; Mohamad Salim, Maheza Irna (October 11, 2014). "Multiobjectives bihistogram equalization for image contrast enhancement".
+- [12] Thresholding - Pham, Nhu-An; Morrison, Andrew; Schwock, Joerg; Aviel-Ronen, Sarit; Iakovlev, Vladimir; Tsao, Ming-Sound; Ho, James; Hedley, David W. (2007-02-27). "Quantitative image analysis of immunohistochemical stains using a CMYK color model".
+- [13] Salt and Pepper Noise - Jayaraman; et al. (2009). Digital Image Processing. Tata McGraw-Hill Education. p. 272. ISBN 9781259081439.
+- [14] Median Filter - Huang, Thomas S.; Yang, George J.; Tang, Gregory Y. (February 1979). "A fast two-dimensional median filtering algorithm".
+- [15] Box Blur - Wojciech Jarosz. 2001. Fast Image Convolutions.
+- [16] Gaussian Blur - R.A. Haddad and A.N. Akansu, "A Class of Fast Gaussian Binomial Filters for Speech and Image Processing," IEEE Transactions on Acoustics, Speech, and Signal Processing, vol. 39, pp 723-727, March 1991.
+- [17] Edge Detection - J. Canny (1986) "A computational approach to edge detection", IEEE Transactions on Pattern Analysis and Machine Intelligence, vol 8, pages 679–714.
+- [18] Prewitt and Sobel Edge Detection - https://www.analyticsvidhya.com/blog/2022/07/beginners-guide-to-image-gradient/
+- [19] Maximum Intensity Projection - Sato, Yoshinobu; Shiraga, Nobuyuki; Nakajima, Shin; Tamura, Shinichi; Kikinis, Ron. "Local Maximum Intensity Projection (LMIP". Journal of Computer Assisted Tomography. 22 (6): 912–917).
+- [20] Average Intensity Projection (AIP) - https://medium.com/@damiandn/an-intoduction-to-biological-image-processing-in-imagej-part-3-stacks-and-stack-projections-942aa789420f
+- [21] Minimum Intensity Projection - Ghonge, Nitin P; Chowdhury, Veena (2018). "Minimum-intensity projection images in high-resolution computed tomography lung: Technology update". Lung India. 35 (5): 439–440.
+- [22] Slicing - Mark Weiser. "Program slicing". Proceedings of the 5th International Conference on Software Engineering, pages 439–449, IEEE Computer Society Press, March 1981.

@@ -20,6 +20,9 @@
  *
  * @note This class depends on the Image class for handling image data. Ensure that the Image class
  *       is compatible and included in your project.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #include "ImageBlur.h"

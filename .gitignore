@@ -25,4 +25,9 @@
 #ignore other temporary files
 **/.vscode
 **/.idea
-**/main
+# **/main
+
+**/folder.py
+**/mainplot.cpp
+**/timing_results.csv
+**/latex

@@ -29,6 +29,13 @@ void runColourCorrectionTests() {
         std::cout << "Enter a number (1-" << colourTests.size() << "): ";
         std::cin >> choice;
 
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
+
         if (choice < 1 || choice > colourTests.size()) {
             std::cout << "Invalid choice, please try again.\n";
             continue;
@@ -58,6 +65,13 @@ void runImageBlurTests() {
 
         std::cout << "Enter a number (1-" << blurTests.size() << "): ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
 
         if (choice < 1 || choice > blurTests.size()) {
             std::cout << "Invalid choice, please try again.\n";
@@ -90,6 +104,13 @@ void runEdgeDetectionTests() {
         std::cout << "Enter a number (1-" << edgeTests.size() << "): ";
         std::cin >> choice;
 
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
+
         if (choice < 1 || choice > edgeTests.size()) {
             std::cout << "Invalid choice, please try again.\n";
             continue;
@@ -118,6 +139,13 @@ void runThreeDFilterTests() {
 
         std::cout << "Enter a number (1-" << filterTests.size() << "): ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
 
         if (choice < 1 || choice > filterTests.size()) {
             std::cout << "Invalid choice, please try again.\n";
@@ -148,6 +176,13 @@ void runProjectionTests() {
 
         std::cout << "Enter a number (1-" << projectionTests.size() << "): ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
 
         if (choice < 1 || choice > projectionTests.size()) {
             std::cout << "Invalid choice, please try again.\n";
@@ -182,6 +217,13 @@ void User_unitTests::run() {
         std::cout << "Enter a number (1-" << tests.size() << "): ";
         std::cin >> choice;
 
+        if (std::cin.fail()) {
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            std::cout << "Invalid input, please enter a number.\n";
+            continue;
+        }
+        
         if (choice < 1 || choice > tests.size()) {
             std::cout << "Invalid choice, please try again.\n";
             continue;
