@@ -11,10 +11,24 @@ T clamp(T val, T minVal, T maxVal) {
     return val;
 }
 
+/**
+ * @brief Calculates the Gaussian value for a given point and sigma.
+ * @param x The x-coordinate of the point.
+ * @param y The y-coordinate of the point.
+ * @param z The z-coordinate of the point.
+ * @param sigma The standard deviation of the Gaussian distribution.
+ * @return The Gaussian function value at the given point.
+ */
 float ThreeDFilter::gaussian(float x, float y, float z, float sigma) {
     return std::exp(-(x * x + y * y + z * z) / (2 * sigma * sigma)) / (std::sqrt(2 * M_PI) * sigma);
 }
 
+/**
+ * @brief Applies a Gaussian blur to a given volume.
+ * @param volume A reference to the Volume object to blur.
+ * @param kernelSize The size of the Gaussian kernel (must be an odd number).
+ * @param sigma The standard deviation of the Gaussian distribution used for the kernel.
+ */
 void ThreeDFilter::gaussianBlur(Volume& volume, int kernelSize, float sigma) {
     int width = volume.getWidth();
     int height = volume.getHeight();
@@ -220,6 +234,11 @@ void ThreeDFilter::gaussianBlur(Volume& volume, int kernelSize, float sigma) {
 //     volume.setData(newVolumeData);
 // }
 
+/**
+ * @brief Applies a median blur to a given volume.
+ * @param volume A reference to the Volume object to apply the median blur.
+ * @param kernelSize The size of the cubic kernel (must be an odd number).
+ */
 void ThreeDFilter::medianBlur(Volume& volume, int kernelSize) {
     int width = volume.getWidth();
     int height = volume.getHeight();
@@ -259,7 +278,11 @@ void ThreeDFilter::medianBlur(Volume& volume, int kernelSize) {
     volume.setData(newVolumeData);
 }
 
-
+/**
+ * @brief Calculates the median value from a vector of unsigned characters.
+ * @param values A reference to the vector of unsigned char values.
+ * @return The median value as an unsigned char.
+ */
 unsigned char ThreeDFilter::median(std::vector<unsigned char>& values) {
     selectionSort(values);
     if (values.size() % 2 == 0) {
@@ -269,6 +292,10 @@ unsigned char ThreeDFilter::median(std::vector<unsigned char>& values) {
     }
 }
 
+/**
+ * @brief Sorts a vector of unsigned char values using the selection sort algorithm.
+ * @param arr A reference to the vector of unsigned char values to be sorted.
+ */
 void ThreeDFilter::selectionSort(std::vector<unsigned char>& arr) {
     for (size_t i = 0; i < arr.size() - 1; i++) {
         size_t min_idx = i;
