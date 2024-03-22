@@ -1,0 +1,15 @@
+Dependencies for This C++ Project:
+
+1. User_2D.h
+2. User_3D.h
+3. Image.h
+4. EdgeDetection.h
+5. ImageBlur.h
+6. ColourCorrection.h
+7. Projection.h
+8. Slice.h
+9. ThreeDFilter.h
+10. Standard libraries:
+   - iostream
+   - filesystem
+   - string

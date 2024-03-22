@@ -1,3 +1,0 @@
-E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/CMakeFiles/advanced-programming-group-selection-sort.dir
-E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/CLionProjects/advanced-programming-group-selection-sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
