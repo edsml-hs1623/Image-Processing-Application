@@ -25,7 +25,7 @@
 #ignore other temporary files
 **/.vscode
 **/.idea
-**/main
+# **/main
 
 **/folder.py
 **/mainplot.cpp
