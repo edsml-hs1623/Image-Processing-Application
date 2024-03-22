@@ -1,3 +1,33 @@
+/**
+ * @file ThreeDFilter.h
+ *
+ * @brief Implementation of 3D image processing techniques, including Gaussian and Median blurs.
+ *
+ * This file provides the implementation of various 3D image processing techniques, primarily focusing on
+ * Gaussian and Median blur filters. These filters are applied to Volume objects representing 3D images or data sets.
+ * The Gaussian blur is implemented by convolving the image with a Gaussian kernel, while the Median blur is
+ * realized through a non-linear filtering approach that replaces each voxel's intensity with the median
+ * of intensities in its neighborhood.
+ *
+ * Key Functionalities:
+ *   - Gaussian Blur: Applies a Gaussian blur filter to smooth 3D images, useful for reducing image noise and details.
+ *   - Median Blur: Applies a Median blur filter to reduce noise without creating artifacts.
+ *   - Utility Functions: Includes functions for value clamping and kernel generation.
+ *
+ * Usage:
+ *   Volume myVolume;
+ *   ThreeDFilter filter;
+ *   filter.gaussianBlur(myVolume, 5, 1.0); // Apply Gaussian blur with a 5x5x5 kernel and sigma = 1.0
+ *   filter.medianBlur(myVolume, 3); // Apply Median blur with a 3x3x3 kernel
+ *
+ * @note The filters modify the Volume object in-place. Ensure that you have a backup of the original
+ *       data if needed.
+ *
+ * Dependencies:
+ *   - Volume.h for the Volume class definition and manipulation.
+ *   - <cmath> and <vector> for mathematical operations and data storage.
+ *   - <numeric> and <array> for additional array operations and fixed-size array storage.
+ */
 #include "ThreeDFilter.h"
 #include <cmath>
 #include <vector>

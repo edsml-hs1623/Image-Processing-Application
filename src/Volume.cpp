@@ -1,3 +1,19 @@
+/**
+ * @file Volume.cpp
+ *
+ * @brief Provides the implementation for the Volume class, handling 3D volume data manipulation.
+ *
+ * This file implements the Volume class, which encapsulates operations for loading, accessing, 
+ * and saving 3D volume data represented as a series of 2D slices. The class provides functionalities 
+ * to load volume data from disk, access volume properties and data, modify the volume data, and 
+ * save the modified volume back to disk. It supports loading and saving volumes as a series of PNG images.
+ *
+ * Dependencies:
+ *   - Volume.h for the declaration of the Volume class.
+ *   - stb_image.h for loading PNG images as volume slices.
+ *   - stb_image_write.h for saving volume slices as PNG images.
+ *   - Standard libraries: <iostream>, <vector>, <algorithm>, <filesystem>, and <cstring>.
+ */
 #include "Volume.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
