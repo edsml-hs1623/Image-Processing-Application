@@ -1,1 +1,28 @@
 .DS_Store
+
+#ignore cmakelists files
+#**/CMakeLists.txt
+
+#ignore Scans
+**/Scans
+#ignore Output
+**/Output
+#ignore TestOutputs
+**/TestOutputs
+
+#ignore build directory
+**/build
+
+#ignore cmake files
+**/CMakeFiles
+**/cmake_install.cmake
+**/CMakeCache.txt
+**/Makefile
+#ignore cmakedebug
+**/cmake_debug
+**/cmake-build-debug
+
+#ignore other temporary files
+**/.vscode
+**/.idea
+**/main
