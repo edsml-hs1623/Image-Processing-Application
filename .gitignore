@@ -6,7 +6,7 @@
 #ignore Scans
 **/Scans
 #ignore Output
-**/Output
+#**/Output
 #ignore TestOutputs
 **/TestOutputs
 
@@ -20,6 +20,7 @@
 **/Makefile
 #ignore cmakedebug
 **/cmake_debug
+**/cmake-build-debug
 
 #ignore other temporary files
 **/.vscode
