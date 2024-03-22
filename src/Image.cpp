@@ -26,6 +26,9 @@
  *   img.saveImage("path/to/output.png", "png");
  *
  * @note This class relies on the stb_image and stb_image_write libraries, which should be included in the project.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #define STB_IMAGE_IMPLEMENTATION

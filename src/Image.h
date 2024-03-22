@@ -15,6 +15,9 @@
  *   - Manipulate raw image data for advanced image processing tasks.
  *
  * @note This class assumes the presence of stb_image.h and stb_image_write.h in the project for handling image I/O.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #ifndef IMAGE_H // Start of the include guard

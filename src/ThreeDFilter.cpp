@@ -27,6 +27,9 @@
  *   - Volume.h for the Volume class definition and manipulation.
  *   - <cmath> and <vector> for mathematical operations and data storage.
  *   - <numeric> and <array> for additional array operations and fixed-size array storage.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 #include "ThreeDFilter.h"
 #include <cmath>

@@ -15,6 +15,9 @@
  *
  * @note This class relies on a compatible Image class for image manipulation. Ensure that the Image class
  *       is properly included and defined in your project.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #ifndef IMAGEBLUR_H

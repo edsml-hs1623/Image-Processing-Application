@@ -19,7 +19,9 @@
  *
  * @note The Image class is required for applying edge detection methods. The effectiveness of each
  *       method may vary depending on the image and the specific requirements of the application.
- *
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  * Structure:
  *   EdgeDetection
  *   |-- prewitt

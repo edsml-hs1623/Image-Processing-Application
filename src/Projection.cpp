@@ -16,6 +16,9 @@
  *   - stb_image_write.h for writing the projection images as PNG files.
  *   - Volume.h for accessing the volume data.
  *   - Standard libraries: <vector>, <numeric>, <limits>, and <algorithm>.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 #include "Projection.h"
 #include "stb_image_write.h"

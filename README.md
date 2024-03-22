@@ -87,7 +87,7 @@ The 3D processing functionalities of the application, implemented in the User_3D
 - Slab Generation: Offers options for default or custom slab indices from the processed bolume data, and generates slabs along the Z-axis and saves them to the output directory.
 
 
-## Explanation of Unittesting
+## Explanation of Unit Testing
 The User_unitTests provides a framework for executing 2D and 3D image processing unit tests. This framework is designed to validate the correctness and performance of these image processing algorithms.
 
 - Selecting Test Categories: Upon starting the program, a list of available test categories will be displayed, including Color Correction tests, Image Blur tests, Edge Detection tests, 3D Filter tests, and Projection tests.
@@ -98,7 +98,7 @@ The User_unitTests provides a framework for executing 2D and 3D image processing
 <details>
   <summary>Click to expand/collapse to see the testing details</summary>
 
-  ## Unittesting Detail
+  ## Unit Testing Detail
 
   - Colour Correction Tests: For grayscale conversion, it verifies the image has been transformed to grayscale by checking for a single channel. Brightness adjustment is assessed by comparing the average brightness before and after the adjustment, expecting an increase. Histogram equalization's success is measured by an expanded intensity distribution, indicated by a greater standard deviation in the histogram. Thresholding tests ensure the image is properly segmented into binary format, with pixels being either black or white. Salt and pepper noise addition is evaluated by the expected increase in black and white pixels, ensuring the noise is accurately applied.
   
@@ -108,7 +108,8 @@ The User_unitTests provides a framework for executing 2D and 3D image processing
 
   - 3D Filter Tests:  Gaussian Blur test applies a Gaussian blur with a specified kernel size and sigma value to the volume. The Gaussian blur is known for its ability to smooth features while preserving edges by giving more weight to the pixels closest to the center of the kernel. The test checks if the standard deviation of the volume's intensity values decreases, which would indicate the blur's effectiveness in smoothing the volume and reducing noise.  Median Blur test Implements a Median blur, which replaces each pixel with the median intensity value from its neighboring pixels within a defined kernel size. This filter is particularly effective against salt and pepper noise and does not assume a normal distribution of intensity values, making it robust for various applications. The test validates the filter's performance by observing a decrease in the standard deviation of the volume's intensity values, demonstrating its capability to reduce noise and smooth the data.
 
-  - Projection Tests: For the MIP test, it applies the MIP method to a volume, creating an image where each pixel represents the maximum intensity encountered along a particular line of sight through the volume. The test verifies this by comparing the intensity of each pixel in the output image with the maximum intensity found across the corresponding z-stack in the volume data. If the intensities match, the test confirms the MIP projection's accuracy.
+  - Projection Tests:  
+    - For the MIP test, it applies the MIP method to a volume, creating an image where each pixel represents the maximum intensity encountered along a particular line of sight through the volume. The test verifies this by comparing the intensity of each pixel in the output image with the maximum intensity found across the corresponding z-stack in the volume data. If the intensities match, the test confirms the MIP projection's accuracy.
 
     - The MINIP test similarly projects the volume into a 2D image, but instead focuses on capturing the minimum intensity value found along each line of sight. This projection is particularly useful for highlighting darker features within a volume. The test checks if the output image's pixel intensities correctly represent the minimum intensity values from the volume, ensuring the MINIP projection is correctly implemented.
 
@@ -158,4 +159,4 @@ https://imperiallondon-my.sharepoint.com/:u:/g/personal/tmd02_ic_ac_uk/EafXMuNsb
 Please see the [references.txt](https://github.com/ese-msc-2023/advanced-programming-group-selection-sort/blob/2D_Hanson/References.md) file.
 
 ## Licence
-Please find the MIT License for this repository [here](https://github.com/ese-msc-2023/advanced-programming-group-selection-sort/blob/Final_Merge/LICENSE)
+Please find the MIT License for this repository [here](https://github.com/ese-msc-2023/advanced-programming-group-selection-sort/blob/Final_Merge/LICENCE)

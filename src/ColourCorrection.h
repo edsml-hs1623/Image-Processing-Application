@@ -20,6 +20,9 @@
  *   - Extends from the Filter class, allowing integration into broader image processing pipelines.
  *
  * @note Ensure the Image class is compatible and that the necessary supporting structures are included.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 
 #ifndef COLOURCORRECTION_H

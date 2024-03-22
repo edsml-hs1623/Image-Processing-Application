@@ -1,3 +1,9 @@
+/**
+ * @file EdgeDetectionTest.h
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
+ */
 #ifndef EDGE_DETECTION_TEST_H
 #define EDGE_DETECTION_TEST_H
 

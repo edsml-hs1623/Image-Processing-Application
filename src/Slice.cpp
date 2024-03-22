@@ -17,6 +17,9 @@
  *   - stb_image_write.h for writing the slice images as PNG files.
  *   - Volume.h for accessing the volume data.
  *   - Standard libraries: <vector>, <iostream>, and <cassert>.
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
  */
 #include "Slice.h"
 #include "stb_image_write.h"

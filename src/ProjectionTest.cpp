@@ -1,3 +1,9 @@
+/**
+ * @file ProjectionTest.cpp
+ * @author acse-yw3523,edsml-lwk16, acse-ad2123, 
+ *         edsml-hs1623, acse-xg1123, edsml-st2923,
+ *         Group: selection sort.
+ */
 #include "ProjectionTest.h"
 #include "Volume.h"
 #include "Projection.h"
