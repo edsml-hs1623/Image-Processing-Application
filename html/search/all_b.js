@@ -6,7 +6,8 @@ var searchData=
   ['setdata_3',['setData',['../class_volume.html#a7197cfa2fd20d33ec41a17bf9202b3c8',1,'Volume']]],
   ['slice_4',['Slice',['../class_slice.html',1,'']]],
   ['slice_2ecpp_5',['Slice.cpp',['../_slice_8cpp.html',1,'']]],
-  ['slicexz_6',['sliceXZ',['../class_slice.html#a709bc9963f02ae13340e5368b2bdbe0d',1,'Slice']]],
-  ['sliceyz_7',['sliceYZ',['../class_slice.html#a44ae66845d43c6eca471af1fbdb8f4e5',1,'Slice']]],
-  ['stbi_5fio_5fcallbacks_8',['stbi_io_callbacks',['../structstbi__io__callbacks.html',1,'']]]
+  ['slice_2eh_6',['Slice.h',['../_slice_8h.html',1,'']]],
+  ['slicexz_7',['sliceXZ',['../class_slice.html#a709bc9963f02ae13340e5368b2bdbe0d',1,'Slice']]],
+  ['sliceyz_8',['sliceYZ',['../class_slice.html#a44ae66845d43c6eca471af1fbdb8f4e5',1,'Slice']]],
+  ['stbi_5fio_5fcallbacks_9',['stbi_io_callbacks',['../structstbi__io__callbacks.html',1,'']]]
 ];

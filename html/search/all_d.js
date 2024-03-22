@@ -6,5 +6,7 @@ var searchData=
   ['user_5f2d_2eh_3',['User_2D.h',['../_user__2_d_8h.html',1,'']]],
   ['user_5f3d_4',['User_3D',['../class_user__3_d.html',1,'User_3D'],['../class_user__3_d.html#a149f3df1c98220515afefa00441ec88c',1,'User_3D::User_3D()']]],
   ['user_5f3d_2ecpp_5',['User_3D.cpp',['../_user__3_d_8cpp.html',1,'']]],
-  ['user_5funittests_6',['User_unitTests',['../class_user__unit_tests.html',1,'']]]
+  ['user_5f3d_2eh_6',['User_3D.h',['../_user__3_d_8h.html',1,'']]],
+  ['user_5funittests_7',['User_unitTests',['../class_user__unit_tests.html',1,'']]],
+  ['user_5funittests_2eh_8',['User_unitTests.h',['../_user__unit_tests_8h.html',1,'']]]
 ];

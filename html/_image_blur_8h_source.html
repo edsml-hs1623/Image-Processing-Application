@@ -84,52 +84,52 @@ $(function() { codefold.init(0); });
 </div><!--header-->
 <div class="contents">
 <a href="_image_blur_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifndef IMAGEBLUR_H</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define IMAGEBLUR_H</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_filter_8h.html">Filter.h</a>&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_image_8h.html">Image.h</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="_image_blur_8h.html">ImageBlur.h</a>&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">enum</span> BlurType { Median, Box, Gaussian };</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef IMAGEBLUR_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define IMAGEBLUR_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="_filter_8h.html">Filter.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="_image_8h.html">Image.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="_image_blur_8h.html">ImageBlur.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_image_blur.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="class_image_blur.html">ImageBlur</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_filter.html">Filter</a> {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_image_blur.html#ae020302562599e30011c48e734bd9dca">ImageBlur</a>(BlurType type, <span class="keywordtype">int</span> kernelSize);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_image_blur.html#a2bdf08a695ebe64b7858e0bdc25bff23">~ImageBlur</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_blur.html#a0a7bef61b89dc395cd4560adcadc1eb7">apply</a>(<a class="code hl_class" href="class_image.html">Image</a> &amp;image) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    BlurType blurType;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> kernelSize;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> applyBoxBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> applyMedianBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> applyGaussianBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> findMedian(std::vector&lt;unsigned char&gt;&amp; values);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> selectionSort(std::vector&lt;unsigned char&gt;&amp; arr);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Define other blur methods as needed</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
-</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">enum</span> BlurType { Median, Box, Gaussian };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_image_blur.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="class_image_blur.html">ImageBlur</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_filter.html">Filter</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_image_blur.html#ae020302562599e30011c48e734bd9dca">ImageBlur</a>(BlurType type, <span class="keywordtype">int</span> kernelSize);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_image_blur.html#a2bdf08a695ebe64b7858e0bdc25bff23">~ImageBlur</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_blur.html#a0a7bef61b89dc395cd4560adcadc1eb7">apply</a>(<a class="code hl_class" href="class_image.html">Image</a> &amp;image) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    BlurType blurType;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">int</span> kernelSize;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> applyBoxBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> applyMedianBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> applyGaussianBlur(<a class="code hl_class" href="class_image.html">Image</a> &amp;image);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> findMedian(std::vector&lt;unsigned char&gt;&amp; values);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> selectionSort(std::vector&lt;unsigned char&gt;&amp; arr);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// IMAGEBLUR_H</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// Define other blur methods as needed</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">// IMAGEBLUR_H</span></div>
 <div class="ttc" id="a_filter_8h_html"><div class="ttname"><a href="_filter_8h.html">Filter.h</a></div><div class="ttdoc">Abstract base class for image filtering operations.</div></div>
 <div class="ttc" id="a_image_8h_html"><div class="ttname"><a href="_image_8h.html">Image.h</a></div><div class="ttdoc">Declaration of the Image class for managing and processing images.</div></div>
 <div class="ttc" id="a_image_blur_8h_html"><div class="ttname"><a href="_image_blur_8h.html">ImageBlur.h</a></div><div class="ttdoc">Declaration of the ImageBlur class for applying various blur effects to images.</div></div>
-<div class="ttc" id="aclass_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdef"><b>Definition</b> Filter.h:36</div></div>
-<div class="ttc" id="aclass_image_blur_html"><div class="ttname"><a href="class_image_blur.html">ImageBlur</a></div><div class="ttdef"><b>Definition</b> ImageBlur.h:33</div></div>
-<div class="ttc" id="aclass_image_blur_html_a0a7bef61b89dc395cd4560adcadc1eb7"><div class="ttname"><a href="class_image_blur.html#a0a7bef61b89dc395cd4560adcadc1eb7">ImageBlur::apply</a></div><div class="ttdeci">void apply(Image &amp;image) override</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:55</div></div>
-<div class="ttc" id="aclass_image_blur_html_a2bdf08a695ebe64b7858e0bdc25bff23"><div class="ttname"><a href="class_image_blur.html#a2bdf08a695ebe64b7858e0bdc25bff23">ImageBlur::~ImageBlur</a></div><div class="ttdeci">virtual ~ImageBlur()</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:48</div></div>
-<div class="ttc" id="aclass_image_blur_html_ae020302562599e30011c48e734bd9dca"><div class="ttname"><a href="class_image_blur.html#ae020302562599e30011c48e734bd9dca">ImageBlur::ImageBlur</a></div><div class="ttdeci">ImageBlur(BlurType type, int kernelSize)</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:43</div></div>
-<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:26</div></div>
+<div class="ttc" id="aclass_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdef"><b>Definition</b> Filter.h:39</div></div>
+<div class="ttc" id="aclass_image_blur_html"><div class="ttname"><a href="class_image_blur.html">ImageBlur</a></div><div class="ttdef"><b>Definition</b> ImageBlur.h:36</div></div>
+<div class="ttc" id="aclass_image_blur_html_a0a7bef61b89dc395cd4560adcadc1eb7"><div class="ttname"><a href="class_image_blur.html#a0a7bef61b89dc395cd4560adcadc1eb7">ImageBlur::apply</a></div><div class="ttdeci">void apply(Image &amp;image) override</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:58</div></div>
+<div class="ttc" id="aclass_image_blur_html_a2bdf08a695ebe64b7858e0bdc25bff23"><div class="ttname"><a href="class_image_blur.html#a2bdf08a695ebe64b7858e0bdc25bff23">ImageBlur::~ImageBlur</a></div><div class="ttdeci">virtual ~ImageBlur()</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:51</div></div>
+<div class="ttc" id="aclass_image_blur_html_ae020302562599e30011c48e734bd9dca"><div class="ttname"><a href="class_image_blur.html#ae020302562599e30011c48e734bd9dca">ImageBlur::ImageBlur</a></div><div class="ttdeci">ImageBlur(BlurType type, int kernelSize)</div><div class="ttdef"><b>Definition</b> ImageBlur.cpp:46</div></div>
+<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -84,55 +84,55 @@ $(function() { codefold.init(0); });
 </div><!--header-->
 <div class="contents">
 <a href="_edge_detection_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#ifndef EDGE_DETECTION_H</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define EDGE_DETECTION_H</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="_filter_8h.html">Filter.h</a>&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="_image_8h.html">Image.h</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">enum</span> EdgeOperator { Sobel, Prewitt, Scharr, RobertsCross };</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifndef EDGE_DETECTION_H</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define EDGE_DETECTION_H</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="_filter_8h.html">Filter.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="_image_8h.html">Image.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_edge_detection.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="class_edge_detection.html">EdgeDetection</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_filter.html">Filter</a> {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_edge_detection.html#a5effc6648b559012777cc3c35f95e6f3">EdgeDetection</a>(EdgeOperator operatorType);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_edge_detection.html#a947695405202481ced2d90f7960e2a48">~EdgeDetection</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_edge_detection.html#aa9e67baf729e3e906c1f61e1628e1fea">apply</a>(<a class="code hl_class" href="class_image.html">Image</a>&amp; image) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_edge_detection.html#a5d427e177d3beab0dd1b4a9cda5528dd">applyEdge</a>(<a class="code hl_class" href="class_image.html">Image</a>&amp; image, <span class="keywordtype">int</span> choice);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> EdgeOperator <a class="code hl_function" href="class_edge_detection.html#a77b74f7f7cf7ca315dece5865ec616df">getEdgeOperatorFromChoice</a>(<span class="keywordtype">int</span> choice);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">enum</span> EdgeOperator { Sobel, Prewitt, Scharr, RobertsCross };</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_edge_detection.html">   46</a></span><span class="keyword">class </span><a class="code hl_class" href="class_edge_detection.html">EdgeDetection</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_filter.html">Filter</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="class_edge_detection.html#a5effc6648b559012777cc3c35f95e6f3">EdgeDetection</a>(EdgeOperator operatorType);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_edge_detection.html#a947695405202481ced2d90f7960e2a48">~EdgeDetection</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_edge_detection.html#aa9e67baf729e3e906c1f61e1628e1fea">apply</a>(<a class="code hl_class" href="class_image.html">Image</a>&amp; image) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_edge_detection.html#a5d427e177d3beab0dd1b4a9cda5528dd">applyEdge</a>(<a class="code hl_class" href="class_image.html">Image</a>&amp; image, <span class="keywordtype">int</span> choice);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    EdgeOperator operatorType;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// Declare helper function</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> applyEdgeDetection(<a class="code hl_class" href="class_image.html">Image</a>&amp; image, <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; kernelX, <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; kernelY);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Declare other private methods for individual edge detection algorithms</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> applySobel(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> applyPrewitt(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> applyScharr(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> applyRobertsCross(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> EdgeOperator <a class="code hl_function" href="class_edge_detection.html#a77b74f7f7cf7ca315dece5865ec616df">getEdgeOperatorFromChoice</a>(<span class="keywordtype">int</span> choice);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    EdgeOperator operatorType;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// Declare helper function</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> applyEdgeDetection(<a class="code hl_class" href="class_image.html">Image</a>&amp; image, <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; kernelX, <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; kernelY);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// Declare other private methods for individual edge detection algorithms</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> applySobel(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> applyPrewitt(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> applyScharr(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> applyRobertsCross(<a class="code hl_class" href="class_image.html">Image</a>&amp; image);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">// EDGE_DETECTION_H</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">// EDGE_DETECTION_H</span></div>
 <div class="ttc" id="a_filter_8h_html"><div class="ttname"><a href="_filter_8h.html">Filter.h</a></div><div class="ttdoc">Abstract base class for image filtering operations.</div></div>
 <div class="ttc" id="a_image_8h_html"><div class="ttname"><a href="_image_8h.html">Image.h</a></div><div class="ttdoc">Declaration of the Image class for managing and processing images.</div></div>
-<div class="ttc" id="aclass_edge_detection_html"><div class="ttname"><a href="class_edge_detection.html">EdgeDetection</a></div><div class="ttdef"><b>Definition</b> EdgeDetection.h:44</div></div>
-<div class="ttc" id="aclass_edge_detection_html_a5d427e177d3beab0dd1b4a9cda5528dd"><div class="ttname"><a href="class_edge_detection.html#a5d427e177d3beab0dd1b4a9cda5528dd">EdgeDetection::applyEdge</a></div><div class="ttdeci">void applyEdge(Image &amp;image, int choice)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:252</div></div>
-<div class="ttc" id="aclass_edge_detection_html_a5effc6648b559012777cc3c35f95e6f3"><div class="ttname"><a href="class_edge_detection.html#a5effc6648b559012777cc3c35f95e6f3">EdgeDetection::EdgeDetection</a></div><div class="ttdeci">EdgeDetection(EdgeOperator operatorType)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:40</div></div>
-<div class="ttc" id="aclass_edge_detection_html_a77b74f7f7cf7ca315dece5865ec616df"><div class="ttname"><a href="class_edge_detection.html#a77b74f7f7cf7ca315dece5865ec616df">EdgeDetection::getEdgeOperatorFromChoice</a></div><div class="ttdeci">static EdgeOperator getEdgeOperatorFromChoice(int choice)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:288</div></div>
-<div class="ttc" id="aclass_edge_detection_html_a947695405202481ced2d90f7960e2a48"><div class="ttname"><a href="class_edge_detection.html#a947695405202481ced2d90f7960e2a48">EdgeDetection::~EdgeDetection</a></div><div class="ttdeci">virtual ~EdgeDetection()</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:45</div></div>
-<div class="ttc" id="aclass_edge_detection_html_aa9e67baf729e3e906c1f61e1628e1fea"><div class="ttname"><a href="class_edge_detection.html#aa9e67baf729e3e906c1f61e1628e1fea">EdgeDetection::apply</a></div><div class="ttdeci">void apply(Image &amp;image) override</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:52</div></div>
-<div class="ttc" id="aclass_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdef"><b>Definition</b> Filter.h:36</div></div>
-<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:26</div></div>
+<div class="ttc" id="aclass_edge_detection_html"><div class="ttname"><a href="class_edge_detection.html">EdgeDetection</a></div><div class="ttdef"><b>Definition</b> EdgeDetection.h:46</div></div>
+<div class="ttc" id="aclass_edge_detection_html_a5d427e177d3beab0dd1b4a9cda5528dd"><div class="ttname"><a href="class_edge_detection.html#a5d427e177d3beab0dd1b4a9cda5528dd">EdgeDetection::applyEdge</a></div><div class="ttdeci">void applyEdge(Image &amp;image, int choice)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:255</div></div>
+<div class="ttc" id="aclass_edge_detection_html_a5effc6648b559012777cc3c35f95e6f3"><div class="ttname"><a href="class_edge_detection.html#a5effc6648b559012777cc3c35f95e6f3">EdgeDetection::EdgeDetection</a></div><div class="ttdeci">EdgeDetection(EdgeOperator operatorType)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:43</div></div>
+<div class="ttc" id="aclass_edge_detection_html_a77b74f7f7cf7ca315dece5865ec616df"><div class="ttname"><a href="class_edge_detection.html#a77b74f7f7cf7ca315dece5865ec616df">EdgeDetection::getEdgeOperatorFromChoice</a></div><div class="ttdeci">static EdgeOperator getEdgeOperatorFromChoice(int choice)</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:291</div></div>
+<div class="ttc" id="aclass_edge_detection_html_a947695405202481ced2d90f7960e2a48"><div class="ttname"><a href="class_edge_detection.html#a947695405202481ced2d90f7960e2a48">EdgeDetection::~EdgeDetection</a></div><div class="ttdeci">virtual ~EdgeDetection()</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:48</div></div>
+<div class="ttc" id="aclass_edge_detection_html_aa9e67baf729e3e906c1f61e1628e1fea"><div class="ttname"><a href="class_edge_detection.html#aa9e67baf729e3e906c1f61e1628e1fea">EdgeDetection::apply</a></div><div class="ttdeci">void apply(Image &amp;image) override</div><div class="ttdef"><b>Definition</b> EdgeDetection.cpp:55</div></div>
+<div class="ttc" id="aclass_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdef"><b>Definition</b> Filter.h:39</div></div>
+<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition</b> Image.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
