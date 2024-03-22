@@ -2,7 +2,7 @@
 #include "Projection.h"
 #include "ThreeDFilter.h"
 #include "Slice.h"
-#include "User_3d.h"
+#include "User_3D.h"
 #include <chrono>
 #include <iostream>
 #include <filesystem>
@@ -29,7 +29,7 @@ User_3D::User_3D() {
 
 // Selects a dataset based on user input
 void User_3D::selectDataset() {
-    std::cout << "Select the dataset you want to process:\n";
+    std::cout << "\nSelect the dataset you want to process:\n";
     std::cout << "1. Fracture\n";
     std::cout << "2. Confuciusornis\n";
     std::cout << "Enter your choice (1 or 2): ";
@@ -53,7 +53,7 @@ void User_3D::selectDataset() {
 void User_3D::setFilterParameters(int& filterChoice, int& kernelSize, float& sigma, std::string& filterType) {
     std::cout << "Volume dimensions: " << originalVolume.getWidth() << " (W) x "
               << originalVolume.getHeight() << " (H) x " << originalVolume.getDepth() << " (D)\n";
-    std::cout << "Choose filter: 1 for Gaussian, 2 for Median, 0 for no filter: ";
+    std::cout << "\nChoose filter: 1 for Gaussian, 2 for Median, 0 for no filter: ";
     std::cin >> filterChoice;
 
     if (filterChoice != 0) {
@@ -109,7 +109,7 @@ void User_3D::generateProjections(const Volume& processedVolume, const std::stri
 }
 
 void User_3D::handleSliceGeneration(const Volume& processedVolume) {
-    std::cout << "Would you like to use default slice indices? (y/n): ";
+    std::cout << "\nWould you like to use default slice indices? (y/n): ";
     char useDefaultSlices;
     std::cin >> useDefaultSlices;
 
@@ -151,7 +151,7 @@ void User_3D::generateSlice(const Volume& processedVolume, int index, const std:
 
 
 void User_3D::handleSlabGeneration(const Volume& processedVolume) {
-    std::cout << "Would you like to use default slab indices? (y/n): ";
+    std::cout << "\nWould you like to use default slab indices? (y/n): ";
     char useDefaultSlabs;
     std::cin >> useDefaultSlabs;
 

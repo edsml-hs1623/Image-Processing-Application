@@ -2,7 +2,6 @@
 
 #ignore cmakelists files
 #**/CMakeLists.txt
-mainblur
 
 #ignore Scans
 **/Scans
@@ -22,6 +21,7 @@ mainblur
 #ignore cmakedebug
 **/cmake_debug
 
-**/.vscode/
-**/main
+#ignore other temporary files
+**/.vscode
 **/.idea
+**/main
