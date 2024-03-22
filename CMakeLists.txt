@@ -24,7 +24,7 @@ add_executable(advanced-programming-group-selection-sort
         src/User_2D.cpp
         src/User_2D.h
         src/User_3D.cpp
-        src/User_3D.cpp
+        src/User_3D.h
         src/Volume.cpp
         src/Volume.h
         src/ColourCorrectionTest.cpp
