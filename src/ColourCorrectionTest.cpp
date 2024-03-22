@@ -32,7 +32,10 @@ void ColourCorrectionTest::run(int testType) {
     }
 }
 
-// Tests converting an image to grayscale.
+// This function tests the grayscale conversion of an image. It loads an image,
+// applies a grayscale filter, and checks if the image has been correctly converted to
+// grayscale by verifying it only has one channel. If the test passes (only 1 channel reamins),
+// it indicates the grayscale conversion was successful; otherwise, it reports failure.
 void ColourCorrectionTest::testGrayscale() {
     Image image;
     if (!image.loadImage("../Images/gracehopper.png")) {
@@ -44,13 +47,12 @@ void ColourCorrectionTest::testGrayscale() {
     grayscaleFilter.apply(image);
 
     if (image.getChannels() == 1) {
-        std::cout << "Grayscale test passed: Image only has 1 channel." << std::endl;
+        std::cout << "Grayscale test passed: The input image for testing is racehopper.png, and the filtered image only has 1 channel." << std::endl;
     } else {
         std::cerr << "Grayscale test failed: Image is not in grayscale." << std::endl;
     }
 }
 
-// Computes the average brightness of an image.
 double computeAverageBrightness(const unsigned char* data, int img_size, int channels) {
     long long totalBrightness = 0;
     for (int i = 0; i < img_size; i += channels) {
@@ -59,7 +61,8 @@ double computeAverageBrightness(const unsigned char* data, int img_size, int cha
     return totalBrightness / (double)(img_size / channels);
 }
 
-// Tests adjusting the brightness of an image.
+// Tests the brightness adjustment of an image by comparing the average brightness of the original and adjusted images.
+// The test passes if the adjusted image is brighter (as the increasement of the brightness is set to 50).
 void ColourCorrectionTest::testBrightnessAdjustment() {
     Image image;
     if (!image.loadImage("../Images/gracehopper.png")) {
@@ -89,7 +92,7 @@ void ColourCorrectionTest::testBrightnessAdjustment() {
 
     // Compare average brightness to verify if brightness has increased.
     if (adjustedAvgBrightness > originalAvgBrightness) {
-        std::cout << "Brightness adjustment test passed: The average brightness is higher." << std::endl;
+        std::cout << "Brightness adjustment test passed: The input image is racehopper.png, and the filtered image has a higher average brightness." << std::endl;
     } else {
         std::cerr << "Brightness adjustment test failed: Image brightness did not increase as expected." << std::endl;
     }
@@ -118,6 +121,13 @@ double calculateStdDev(const std::vector<int>& histogram, int totalPixels) {
     return std::sqrt(variance);
 }
 
+// This function tests the histogram equalization feature on an image.
+// It first calculates the standard deviation (std) of the original
+// image's histogram to gauge the distribution spread. After applying histogram equalization,
+// it calculates the std of the equalized image's histogram.
+// The test is considered successful if the equalized image's histogram
+// shows a greater std, indicating a wider spread of intensity values and
+// potentially enhancing the image contrast.
 void ColourCorrectionTest::testHistogramEqualization() {
     Image Image;
     Image.loadImage("../Images/stinkbug.png");
@@ -135,12 +145,20 @@ void ColourCorrectionTest::testHistogramEqualization() {
 
 
     if (equalizedStdDev > originalStdDev) {
-        std::cout << "Histogram equalization test passed: Distribution is wider." << std::endl;
+        std::cout << "Histogram equalization test passed: The input image is stinkbug.png, and the filtered imaged has a wider distribution (std)." << std::endl;
     } else {
         std::cerr << "Histogram equalization test failed: Distribution did not significantly improve." << std::endl;
     }
 }
 
+// This function tests the thresholding feature on an image to ensure it properly converts
+// the image to a binary format based on a defined threshold value. The process involves
+// loading an image, applying a thresholding operation where each pixel's brightness is
+//  compared to a threshold value (128 in this case), and then setting the pixel to black
+//  or white depending on whether it falls below or above the threshold. The test verifies
+// the operation by checking if all pixels in the processed image are strictly black or white,
+// indicating successful thresholding. If any pixel does not conform to these binary values,
+// the test is considered to have failed.
 void ColourCorrectionTest::testThresholding() {
     Image image;
     if (!image.loadImage("../Images/gracehopper.png")) {
@@ -186,35 +204,35 @@ void ColourCorrectionTest::testThresholding() {
     }
 
     if (isThresholdingCorrect) {
-        std::cout << "Thresholding test passed: All pixels are black and white." << std::endl;
+        std::cout << "Thresholding test passed: The input image is gracehopper.png, and in the filtered image all pixels are black and white." << std::endl;
     } else {
         std::cerr << "Thresholding test failed: Image thresholding did not work as expected." << std::endl;
     }
 }
 
-// Calculate percentage of black and white pixels in the image
-float calculateBlackWhitePercentage(const unsigned char* data, int width, int height, int channels) {
-    int size = width * height * channels;
-    int bwCount = 0; // Count of black and white pixels
+// // Calculate percentage of black and white pixels in the image
+// float calculateBlackWhitePercentage(const unsigned char* data, int width, int height, int channels) {
+//     int size = width * height * channels;
+//     int bwCount = 0; // Count of black and white pixels
 
-    for (int i = 0; i < size; i += channels) {
-        // Check if each pixel is black or white
-        bool isBW = true;
-        for (int ch = 0; ch < channels; ++ch) {
-            if (channels == 4 && ch == 3) continue; // Ignore alpha channel
-            if (data[i + ch] != 0 && data[i + ch] != 255) {
-                isBW = false;
-                break;
-            }
-        }
-        if (isBW) bwCount++;
-    }
+//     for (int i = 0; i < size; i += channels) {
+//         // Check if each pixel is black or white
+//         bool isBW = true;
+//         for (int ch = 0; ch < channels; ++ch) {
+//             if (channels == 4 && ch == 3) continue; // Ignore alpha channel
+//             if (data[i + ch] != 0 && data[i + ch] != 255) {
+//                 isBW = false;
+//                 break;
+//             }
+//         }
+//         if (isBW) bwCount++;
+//     }
 
-    // Return percentage of black and white pixels
-    return static_cast<float>(bwCount) / (width * height) * 100.0f;
-}
+//     // Return percentage of black and white pixels
+//     return static_cast<float>(bwCount) / (width * height) * 100.0f;
+// }
 
-// Modify function to return count of black and white pixels
+// Function to return count of black and white pixels
 int calculateBlackWhitePixelCount(const unsigned char* data, int width, int height, int channels) {
     int size = width * height * channels;
     int bwCount = 0; // Count of black and white pixels
@@ -235,6 +253,13 @@ int calculateBlackWhitePixelCount(const unsigned char* data, int width, int heig
     return bwCount;
 }
 
+// The testSaltAndPepperNoise function assesses the impact of adding salt and pepper noise to an image.
+// It does so by comparing the count of black and white pixels before and after applying the noise.
+// The function calculates the expected increase in the number of black and white pixels based on
+//  the specified noise percentage (5% in this case) and validates the operation by ensuring the actual
+// increase is within a 1% error margin of the expected increase. This test helps verify the correct
+// implementation and effectiveness of the salt and pepper noise addition, ensuring it adds the intended
+// amount of noise to the image without exceeding expected variations.
 void ColourCorrectionTest::testSaltAndPepperNoise() {
     Image image;
     if (!image.loadImage("../Images/gracehopper.png")) {
@@ -255,7 +280,7 @@ void ColourCorrectionTest::testSaltAndPepperNoise() {
 
     // Check if actual increase in black and white pixels count is close to expected
     if (abs(actualIncrease - expectedIncrease) <= totalPixels * 0.01) { // Allowing 1% error margin
-        std::cout << "Salt and pepper noise test passed: Actual increase is close to the expected." << std::endl;
+        std::cout << "Salt and pepper noise test passed: The input image is gracehopper.png, and the actual noise in the filtered image increase is close to the expected (5%)." << std::endl;
     } else {
         std::cerr << "Salt and pepper noise test failed: Actual increase does not match the expected." << std::endl
                   << "Expected increase: " << expectedIncrease << " pixels, Actual increase: " << actualIncrease << " pixels." << std::endl;

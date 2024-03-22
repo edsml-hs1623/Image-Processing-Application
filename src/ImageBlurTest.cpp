@@ -42,6 +42,9 @@ double ImageBlurTest::calculateNoiseLevel(const Image& image) {
     return static_cast<double>(noisePixels) / (width * height);
 }
 
+// Due to the characteristics of the median blur filter being able to eliminate salt and pepper noise,
+// here choose vh_anatomy_sp15.png for testing. After filtering, the noise indeed reduced by 15,
+// thereby proving the effectiveness of this filter.
 void ImageBlurTest::testMedianBlur() {
     Image image;
     if (!image.loadImage("../Images/vh_anatomy_sp15.png")) {
@@ -59,7 +62,7 @@ void ImageBlurTest::testMedianBlur() {
 
     // Verify if the noise level significantly decreased
     if (blurredNoiseLevel < originalNoiseLevel) {
-        std::cout << "Median Blur Test Passed: Noise level decreased by ";
+        std::cout << "Median Blur Test Passed: The input image is vh_anatomy_sp15.png, and the noise level decreased by ";
         std::cout << originalNoiseLevel - blurredNoiseLevel << std::endl;
     } else {
         std::cerr << "Median Blur Test Failed: Noise level did not decrease significantly." << std::endl;
@@ -86,6 +89,10 @@ double ImageBlurTest::calculateStdDev(const Image& image) {
     return sqrt(variance);
 }
 
+// This function evaluates the box blur effect on an image. It calculates the
+// standard deviation (a measure of image contrast and detail sharpness) of the
+// original image and the image after applying box blur. A successful test shows
+// a reduced standard deviation, demonstrating that the box blur effectively smoothens the image.
 void ImageBlurTest::testBoxBlur() {
     Image image;
     if (!image.loadImage("../Images/gracehopper.png")) {
@@ -105,13 +112,17 @@ void ImageBlurTest::testBoxBlur() {
 
     // Verify the blur effect: the standard deviation of the blurred image should be smaller than that of the original image
     if (blurredStdDev < originalStdDev) {
-        std::cout << "Box Blur Test Passed: The standard deviation decreased from "
+        std::cout << "Box Blur Test Passed: The input image is gracehopper.png, and the standard deviation of the filtered image decreased from "
                   << originalStdDev << " to " << blurredStdDev << ", indicating the image is smoother." << std::endl;
     } else {
         std::cerr << "Box Blur Test Failed: Expected a lower standard deviation in the blurred image.\n";
     }
 }
 
+// This function evaluates the Gaussian blur effect on an image. It calculates the
+// standard deviation (a measure of image contrast and detail sharpness) of the
+// original image and the image after applying Gaussian blur. A successful test shows
+// a reduced standard deviation, demonstrating that the Gaussian blur effectively smoothens the image.
 void ImageBlurTest::testGaussianBlur() {
     Image image;
     // Ensure the test image path is correct
@@ -132,7 +143,7 @@ void ImageBlurTest::testGaussianBlur() {
 
     // Verify the blur effect: the standard deviation of the blurred image should be smaller than that of the original image
     if (blurredStdDev < originalStdDev) {
-        std::cout << "Gaussian Blur Test Passed: The standard deviation decreased from "
+        std::cout << "Gaussian Blur Test Passed: The input image is gracehopper.png, and the standard deviation of the filtered image decreased from "
                   << originalStdDev << " to " << blurredStdDev << ", indicating the image is smoother." << std::endl;
     } else {
         std::cerr << "Gaussian Blur Test Failed: The standard deviation did not decrease significantly." << std::endl;

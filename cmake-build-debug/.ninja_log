@@ -21,3 +21,7 @@
 1318	2535	7327551447922744	CMakeFiles/advanced-programming-group-selection-sort.dir/src/ProjectionTest.cpp.obj	8e35c2623850bd3d
 1758	2619	7327551448779479	CMakeFiles/advanced-programming-group-selection-sort.dir/src/main.cpp.obj	78e7fbdf6e577b60
 2619	2978	7327551452307271	advanced-programming-group-selection-sort.exe	9a25b2ab9826e835
+14	630	7328023232794196	CMakeFiles/advanced-programming-group-selection-sort.dir/src/EdgeDetectionTest.cpp.obj	6743c10d47c62e16
+8	784	7328023508549166	CMakeFiles/advanced-programming-group-selection-sort.dir/src/ImageBlurTest.cpp.obj	be8bd3e39fe6013b
+3	672	7328023919097987	CMakeFiles/advanced-programming-group-selection-sort.dir/src/ColourCorrectionTest.cpp.obj	3bab5e20cb04912e
+672	1036	7328023922714839	advanced-programming-group-selection-sort.exe	9a25b2ab9826e835
