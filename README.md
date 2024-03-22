@@ -95,6 +95,26 @@ The User_unitTests provides a framework for executing 2D and 3D image processing
 - View Test Results: Each test will execute its respective image processing operation and compare its output to see if it conforms to the characteristics of this filter. For instance, the output of Grayscale Conversion should only have 1 channel. Pass or Fail will be displayed along with the reasons for success or failure, and some parameter comparisons before and after image processing.
 - Repeating or Exiting: After completing a test, users have the option to continue running other tests within the same category, return to the main menu to select a different category, or exit the test program.
 
+<details>
+  <summary>Click to expand/collapse to see the testing details</summary>
+
+  ## Unittesting Detail
+
+  - Colour Correction Tests: For grayscale conversion, it verifies the image has been transformed to grayscale by checking for a single channel. Brightness adjustment is assessed by comparing the average brightness before and after the adjustment, expecting an increase. Histogram equalization's success is measured by an expanded intensity distribution, indicated by a greater standard deviation in the histogram. Thresholding tests ensure the image is properly segmented into binary format, with pixels being either black or white. Salt and pepper noise addition is evaluated by the expected increase in black and white pixels, ensuring the noise is accurately applied.
+  
+  - Image Blur Tests: For the Median Blur test, the test initially calculates the original noise level of the image by counting pixels at the extremes of the intensity spectrum. After applying the median blur filter to an image with 15% salt and pepper noise (renowned for its ability to reduce such noise), the test recalculates the noise level. A successful reduction of noise by 15% confirms the effectiveness of the filter. The Box Blur  test and Gaussian Blur test both start by calculating the standard deviation of the original image to establish a baseline for image contrast and sharpness. After the application of each blur filter, a new standard deviation is calculated. The expectation for a successful test is a lower standard deviation in the blurred image compared to the original, indicating the image has become smoother. This demonstrates the blur filters' capacity to soften the image, reduce details, and noise.
+
+  - Edge Detection Tests: Each test applies its respective filter to an image and then evaluates the result by calculating the average gradient magnitude before and after the application, as color value changes between pixels will sharply increase after edge enhancement. A successful edge detection algorithm will increase the image's average gradient magnitude, indicating that the edges within the image have been enhanced and made more distinguishable.
+
+  - 3D Filter Tests:  Gaussian Blur test applies a Gaussian blur with a specified kernel size and sigma value to the volume. The Gaussian blur is known for its ability to smooth features while preserving edges by giving more weight to the pixels closest to the center of the kernel. The test checks if the standard deviation of the volume's intensity values decreases, which would indicate the blur's effectiveness in smoothing the volume and reducing noise.  Median Blur test Implements a Median blur, which replaces each pixel with the median intensity value from its neighboring pixels within a defined kernel size. This filter is particularly effective against salt and pepper noise and does not assume a normal distribution of intensity values, making it robust for various applications. The test validates the filter's performance by observing a decrease in the standard deviation of the volume's intensity values, demonstrating its capability to reduce noise and smooth the data.
+
+  - Projection Tests: For the MIP test, it applies the MIP method to a volume, creating an image where each pixel represents the maximum intensity encountered along a particular line of sight through the volume. The test verifies this by comparing the intensity of each pixel in the output image with the maximum intensity found across the corresponding z-stack in the volume data. If the intensities match, the test confirms the MIP projection's accuracy.
+
+    - The MINIP test similarly projects the volume into a 2D image, but instead focuses on capturing the minimum intensity value found along each line of sight. This projection is particularly useful for highlighting darker features within a volume. The test checks if the output image's pixel intensities correctly represent the minimum intensity values from the volume, ensuring the MINIP projection is correctly implemented.
+
+    - For the AIP test, the method computes an average intensity projection, which averages the intensity values encountered along each line of sight through the volume. This technique provides a more comprehensive view of the volume's internal structures. The test evaluates the accuracy of the AIP by comparing the output image's pixel intensities against the expected average intensities calculated from the volume data. A match confirms the AIP's effectiveness.think you will need to build 
+</details>
+
 
 ## Expected Result
 
